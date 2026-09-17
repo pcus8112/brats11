@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Train Recursive Friendly Decomposition with random addition, subtraction, multiplication, and division problems.">
+  <meta name="theme-color" content="#031329">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307080d'/%3E%3Cpath d='M10 18h44v7H10zm0 21h44v7H10z' fill='%23ff3b78'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='900' fill='%23ffd447'%3EB11%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>RFD Training — BRATS 11</title>
+  <script src="assets/common.js" defer></script>
+  <script src="assets/engine.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body data-page="rfd">
+  <header id="site-header"></header>
+  <main class="site-shell page-main">
+    <div class="page-intro">
+      <div><p class="eyebrow" data-i18n="rfd.eyebrow"></p><h1 data-i18n="rfd.title"></h1></div>
+      <p data-i18n="rfd.intro"></p>
+    </div>
+    <form class="trainer-card" id="rfd-form" novalidate>
+      <div class="control-bar">
+        <div class="control-group">
+          <label for="rfd-level" data-i18n="common.level"></label>
+          <select id="rfd-level">
+            <option value="1" data-i18n="rfd.level1"></option>
+            <option value="2" data-i18n="rfd.level2"></option>
+            <option value="3" data-i18n="rfd.level3"></option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="rfd-operation" data-i18n="common.operation"></label>
+          <select id="rfd-operation">
+            <option value="mixed" data-i18n="common.mixed"></option>
+            <option value="add" data-i18n="common.addition"></option>
+            <option value="sub" data-i18n="common.subtraction"></option>
+            <option value="mul" data-i18n="common.multiplication"></option>
+            <option value="div" data-i18n="common.division"></option>
+          </select>
+        </div>
+      </div>
+      <div class="trainer-content">
+        <div class="problem-head">
+          <div><p class="problem-label" data-i18n="common.task"></p><p class="problem" id="problem" aria-live="polite"></p></div>
+        </div>
+        <section class="section">
+          <div class="section-heading"><h2 data-i18n="rfd.routeTitle"></h2><p data-i18n="rfd.routeHint"></p></div>
+          <div class="route-builder">
+            <div class="field"><label for="route-a" data-i18n="rfd.number1"></label><input id="route-a" type="text" inputmode="numeric" autocomplete="off"></div>
+            <select id="route-op-1" aria-label="Operator 1"><option value="+">+</option><option value="-">−</option><option value="*">×</option><option value="/">÷</option></select>
+            <div class="field"><label for="route-b" data-i18n="rfd.number2"></label><input id="route-b" type="text" inputmode="numeric" autocomplete="off"></div>
+            <select id="route-op-2" aria-label="Operator 2"><option value="+">+</option><option value="-">−</option><option value="*">×</option><option value="/">÷</option></select>
+            <div class="field"><label for="route-c" data-i18n="rfd.number3"></label><input id="route-c" type="text" inputmode="numeric" autocomplete="off"></div>
+            <div class="route-symbol" aria-hidden="true">=</div>
+            <div class="field"><label for="route-result" data-i18n="common.result"></label><input id="route-result" type="text" inputmode="numeric" autocomplete="off"></div>
+          </div>
+          <div class="route-options">
+            <div class="field">
+              <label for="route-grouping" data-i18n="rfd.structure"></label>
+              <select id="route-grouping"><option value="normal" data-i18n="rfd.structureNormal"></option><option value="left" data-i18n="rfd.structureLeft"></option><option value="right" data-i18n="rfd.structureRight"></option></select>
+            </div>
+            <p class="route-preview" id="route-preview" aria-live="polite"></p>
+          </div>
+        </section>
+        <div class="actions"><button class="button button-primary" type="submit" data-i18n="common.check"></button><button class="button button-secondary" id="new-problem" type="button" data-i18n="common.new"></button></div>
+        <div class="result" id="result" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+BRATS 11 — BEFORE PUBLIC LAUNCH
+
+The site is complete and functional, but the following legal facts were not supplied and must be inserted in assets/common.js before public launch:
+
+1. Full postal/service address of the site operator.
+2. Public contact email address.
+3. Final hosting provider name and full legal address.
+4. The exact approved Singer Shamrock Enterprises logo file. The current build intentionally uses a text signet and does not invent or alter the fixed corporate logo.
+
+If analytics, accounts, payments, advertising, third-party fonts, videos, or other external services are added, update the privacy notice before activating them.

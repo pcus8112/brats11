@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete B11 trainer for three-digit multiplication with visible checkpoints.">
+  <meta name="theme-color" content="#031329">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307080d'/%3E%3Cpath d='M10 18h44v7H10zm0 21h44v7H10z' fill='%23ff3b78'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='900' fill='%23ffd447'%3EB11%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>Full B11 — BRATS 11</title>
+  <script src="assets/common.js" defer></script>
+  <script src="assets/engine.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body data-page="full">
+  <header id="site-header"></header>
+  <main class="site-shell page-main">
+    <div class="page-intro">
+      <div><p class="eyebrow" data-i18n="full.eyebrow"></p><h1 data-i18n="full.title"></h1></div>
+      <p data-i18n="full.intro"></p>
+    </div>
+    <form class="trainer-card" id="b11-form" novalidate>
+      <fieldset class="mode-tabs" aria-label="Training mode">
+        <div class="mode-option"><input type="radio" name="mode" id="mode-apply" value="apply" checked><label for="mode-apply" data-i18n="common.modeApply"></label></div>
+        <div class="mode-option"><input type="radio" name="mode" id="mode-create" value="create"><label for="mode-create" data-i18n="common.modeCreate"></label></div>
+        <div class="mode-option"><input type="radio" name="mode" id="mode-full" value="full"><label for="mode-full" data-i18n="common.modeFull"></label></div>
+      </fieldset>
+      <div class="trainer-content">
+        <div class="problem-head">
+          <div><p class="problem-label" data-i18n="common.task"></p><p class="problem" id="problem" aria-live="polite"></p></div>
+          <div class="task-badge" id="given-code"><small data-i18n="common.givenCode"></small><strong><span id="given-code-value"></span><sub>11</sub></strong></div>
+        </div>
+        <section class="section hidden" id="code-section">
+          <div class="section-heading"><h2 data-i18n="common.modeCreate"></h2><p data-i18n="full.codeHint"></p></div>
+          <div class="fields">
+            <div class="field"><label for="anchor" data-i18n="full.anchorLabel"></label><input id="anchor" type="text" inputmode="numeric" autocomplete="off" aria-describedby="anchor-feedback"><p class="feedback" id="anchor-feedback"></p></div>
+            <div class="field"><label for="remainder" data-i18n="common.remainder"></label><input id="remainder" type="text" inputmode="numeric" autocomplete="off" aria-describedby="remainder-feedback"><p class="feedback" id="remainder-feedback"></p></div>
+            <div class="field"><label for="code" data-i18n="common.code"></label><input id="code" type="text" inputmode="text" maxlength="3" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="code-feedback"><p class="feedback" id="code-feedback"></p></div>
+          </div>
+        </section>
+        <section class="section" id="execute-section">
+          <div class="section-heading"><h2 data-i18n="common.modeApply"></h2><p>Start → KM → Add → KM → Add</p></div>
+          <div class="fields">
+            <div class="field"><label id="start-label" for="start"></label><input id="start" type="text" inputmode="numeric" autocomplete="off" aria-describedby="start-feedback"><p class="feedback" id="start-feedback"></p></div>
+            <div class="field"><label id="km1-label" for="km1"></label><input id="km1" type="text" inputmode="numeric" autocomplete="off" aria-describedby="km1-feedback"><p class="feedback" id="km1-feedback"></p></div>
+            <div class="field"><label id="add1-label" for="add1"></label><input id="add1" type="text" inputmode="numeric" autocomplete="off" aria-describedby="add1-feedback"><p class="feedback" id="add1-feedback"></p></div>
+          </div>
+          <div class="fields" style="margin-top:12px">
+            <div class="field"><label id="sum1-label" for="sum1"></label><input id="sum1" type="text" inputmode="numeric" autocomplete="off" aria-describedby="sum1-feedback"><p class="feedback" id="sum1-feedback"></p></div>
+            <div class="field"><label id="km2-label" for="km2"></label><input id="km2" type="text" inputmode="numeric" autocomplete="off" aria-describedby="km2-feedback"><p class="feedback" id="km2-feedback"></p></div>
+            <div class="field"><label id="add2-label" for="add2"></label><input id="add2" type="text" inputmode="numeric" autocomplete="off" aria-describedby="add2-feedback"><p class="feedback" id="add2-feedback"></p></div>
+          </div>
+          <div class="fields" style="margin-top:12px;grid-template-columns:minmax(0,1fr)">
+            <div class="field"><label id="sum2-label" for="sum2"></label><input id="sum2" type="text" inputmode="numeric" autocomplete="off" aria-describedby="sum2-feedback"><p class="feedback" id="sum2-feedback"></p></div>
+          </div>
+        </section>
+        <div class="actions"><button class="button button-primary" type="submit" data-i18n="common.check"></button><button class="button button-secondary" id="new-problem" type="button" data-i18n="common.new"></button></div>
+        <div class="result" id="result" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>
