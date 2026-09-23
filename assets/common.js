@@ -17,14 +17,14 @@
       "nav.legal": "Rechtliches",
       "brand.method": "Home of the B11 Method",
       "brand.sse": "Singer Shamrock Enterprises",
-      "brand.est": "Ideenentwicklung · EST. 2026",
+      "brand.est": "Eine Marke von Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026",
       "lang.de": "Deutsch",
       "lang.en": "Englisch (USA)",
-      "lang.fr": "Französisch (Québec)",
+      "lang.fr": "Französisch (Kanada)",
       "footer.imprint": "Impressum",
       "footer.privacy": "Datenschutz",
       "footer.terms": "Nutzungsbedingungen",
-      "footer.marketing": "Vermarktung durch Pierre C. U. Singer",
+      "footer.marketing": "Betrieben von Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIRET en cours d’attribution",
       "index.eyebrow": "Vier Trainingsstufen · eine Methode",
       "index.titleA": "Finde den",
       "index.titleB": "kürzeren Weg.",
@@ -131,14 +131,14 @@
       "legal.title": "Rechtliche Informationen",
       "legal.intro": "Impressum, Datenschutz und Bedingungen für die Trainingsseiten.",
       "legal.imprintTitle": "Impressum",
-      "legal.operator": "Verantwortlich für Betrieb und Vermarktung",
-      "legal.operatorValue": "Pierre C. U. Singer · Saint-Usuge, Frankreich",
-      "legal.idea": "Ideenentwicklung und Signet",
-      "legal.ideaValue": "Singer Shamrock Enterprises · EST. 2026 · Projekt in Vorbereitung",
+      "legal.operator": "Verantwortlich für diese Website",
+      "legal.operatorValue": "Pierre Christian Ulrich Singer, Entrepreneur individuel (EI)",
+      "legal.idea": "Markenstatus",
+      "legal.ideaValue": "Singer Shamrock Enterprises — eine Marke von Pierre Christian Ulrich Singer, Entrepreneur individuel (EI). EST. 2026 ist Bestandteil des Brandings.",
       "legal.contact": "Kontakt und ladungsfähige Anschrift",
-      "legal.contactMissing": "Die vollständige Postanschrift und Kontakt-E-Mail müssen vor der öffentlichen Freischaltung ergänzt werden.",
+      "legal.siret": "SIRET en cours d’attribution",
       "legal.hosting": "Hosting",
-      "legal.hostingMissing": "Der endgültige Hostinganbieter und dessen vollständige Anschrift werden nach der Hostingentscheidung ergänzt.",
+      "legal.hostingValue": "Diese Website wird über GitHub Pages von GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, bereitgestellt.",
       "legal.privacyTitle": "Datenschutz",
       "legal.privacy1": "Diese statische Version verarbeitet Aufgaben und Eingaben ausschließlich im Browser. Sie übermittelt keine Trainingsantworten an einen Server und setzt keine Analyse- oder Werbe-Cookies.",
       "legal.privacy2": "Die gewählte Sprache kann lokal im Browser gespeichert werden. Diese Einstellung bleibt auf dem jeweiligen Gerät und kann durch Löschen der Browserdaten entfernt werden.",
@@ -147,7 +147,7 @@
       "legal.terms1": "BRATS 11 ist ein Lern- und Übungsangebot für strategisches Kopfrechnen. Die dargestellten Wege dienen dem Training mathematisch gleichwertiger Umformungen.",
       "legal.terms2": "Trotz sorgfältiger Prüfung kann keine Gewähr für ununterbrochene Verfügbarkeit oder vollständige Fehlerfreiheit übernommen werden. Entscheidungen mit finanziellen, rechtlichen, medizinischen oder sicherheitsrelevanten Folgen dürfen nicht allein auf Ausgaben dieser Seite gestützt werden.",
       "legal.terms3": "Inhalte, Gestaltung, Namen und Trainingslogik dürfen ohne Erlaubnis nicht als eigenes Produkt vervielfältigt oder kommerziell verbreitet werden. Gesetzlich zulässige private Nutzung und zwingende Schranken des Urheberrechts bleiben unberührt.",
-      "legal.version": "Arbeitsstand: 16. September 2026"
+      "legal.version": "Stand: 23. September 2026"
     },
     en: {
       "meta.index": "BRATS 11 — Home of the B11 Method",
@@ -157,9 +157,9 @@
       "meta.full": "Full B11 — BRATS 11",
       "meta.legal": "Legal — BRATS 11",
       "nav.home": "Home", "nav.rfd": "RFD", "nav.killer": "×11", "nav.soft": "B11 Soft", "nav.full": "Full B11", "nav.legal": "Legal",
-      "brand.method": "Home of the B11 Method", "brand.sse": "Singer Shamrock Enterprises", "brand.est": "Idea development · EST. 2026",
-      "lang.de": "German", "lang.en": "English (USA)", "lang.fr": "French (Québec)",
-      "footer.imprint": "Legal notice", "footer.privacy": "Privacy", "footer.terms": "Terms", "footer.marketing": "Marketed by Pierre C. U. Singer",
+      "brand.method": "Home of the B11 Method", "brand.sse": "Singer Shamrock Enterprises", "brand.est": "A brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026",
+      "lang.de": "German", "lang.en": "English (USA)", "lang.fr": "French (Canada)",
+      "footer.imprint": "Legal notice", "footer.privacy": "Privacy", "footer.terms": "Terms", "footer.marketing": "Operated by Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIRET en cours d’attribution",
       "index.eyebrow": "Four training stages · one method", "index.titleA": "Find the", "index.titleB": "shorter route.",
       "index.lead": "BRATS 11 does not train you to grind through a calculation. Learn to rebuild numbers, master the Killer Move, and combine both skills in the complete B11 Method.",
       "index.thought": "Question the rule. Keep the truth. Cut the grind.",
@@ -191,24 +191,24 @@
       "full.codeHint": "Full B11 codes have three digits. Numbers below 121 begin with 0; X represents ten.", "full.anchorLabel": "Largest 121 anchor",
       "full.km1": "Killer Move 1", "full.add1": "Added product with b", "full.sum1": "First total", "full.km2": "Killer Move 2", "full.add2": "Added product with c", "full.sum2": "Second total",
       "legal.eyebrow": "BRATS 11", "legal.title": "Legal information", "legal.intro": "Legal notice, privacy information, and terms for the training site.",
-      "legal.imprintTitle": "Legal notice", "legal.operator": "Responsible for site operation and marketing", "legal.operatorValue": "Pierre C. U. Singer · Saint-Usuge, France",
-      "legal.idea": "Idea development and signet", "legal.ideaValue": "Singer Shamrock Enterprises · EST. 2026 · Project in preparation",
-      "legal.contact": "Contact and service address", "legal.contactMissing": "The complete postal address and contact email must be added before the public launch.",
-      "legal.hosting": "Hosting", "legal.hostingMissing": "The final hosting provider and its complete address will be added after the hosting decision.",
+      "legal.imprintTitle": "Legal notice", "legal.operator": "Responsible for this website", "legal.operatorValue": "Pierre Christian Ulrich Singer, Entrepreneur individuel (EI)",
+      "legal.idea": "Brand status", "legal.ideaValue": "Singer Shamrock Enterprises — a brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI). EST. 2026 is part of the branding.",
+      "legal.contact": "Contact and service address", "legal.siret": "SIRET en cours d’attribution",
+      "legal.hosting": "Hosting", "legal.hostingValue": "This website is hosted through GitHub Pages by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.",
       "legal.privacyTitle": "Privacy", "legal.privacy1": "This static version processes problems and answers entirely in the browser. It does not send training answers to a server and does not use analytics or advertising cookies.",
       "legal.privacy2": "The selected language may be stored locally in the browser. It remains on that device and can be removed by clearing browser data.",
       "legal.privacy3": "If user accounts, audience measurement, payment services, or external content are added later, this notice must be updated before those services are activated.",
       "legal.termsTitle": "Terms of use", "legal.terms1": "BRATS 11 is a learning and practice tool for strategic mental arithmetic. The displayed routes are intended to train mathematically equivalent transformations.",
       "legal.terms2": "Although the site is checked carefully, uninterrupted availability and complete freedom from errors cannot be guaranteed. Do not base financial, legal, medical, or safety-critical decisions solely on this site's output.",
       "legal.terms3": "The content, design, names, and training logic may not be reproduced or commercially distributed as another product without permission. Statutory private use and mandatory copyright exceptions remain unaffected.",
-      "legal.version": "Working version: September 16, 2026"
+      "legal.version": "Last updated: September 23, 2026"
     },
     fr: {
       "meta.index": "BRATS 11 — Accueil de la méthode B11", "meta.rfd": "Entraînement RFD — BRATS 11", "meta.killer": "Killer Move ×11 — BRATS 11", "meta.soft": "B11 Soft — BRATS 11", "meta.full": "B11 complet — BRATS 11", "meta.legal": "Mentions légales — BRATS 11",
       "nav.home": "Accueil", "nav.rfd": "RFD", "nav.killer": "×11", "nav.soft": "B11 Soft", "nav.full": "B11 complet", "nav.legal": "Mentions légales",
-      "brand.method": "Accueil de la méthode B11", "brand.sse": "Singer Shamrock Enterprises", "brand.est": "Développement d’idées · EST. 2026",
-      "lang.de": "Allemand", "lang.en": "Anglais (É.-U.)", "lang.fr": "Français (Québec)",
-      "footer.imprint": "Mentions légales", "footer.privacy": "Confidentialité", "footer.terms": "Conditions", "footer.marketing": "Commercialisation par Pierre C. U. Singer",
+      "brand.method": "Accueil de la méthode B11", "brand.sse": "Singer Shamrock Enterprises", "brand.est": "Une marque de Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026",
+      "lang.de": "Allemand", "lang.en": "Anglais (É.-U.)", "lang.fr": "Français (Canada)",
+      "footer.imprint": "Mentions légales", "footer.privacy": "Confidentialité", "footer.terms": "Conditions", "footer.marketing": "Exploité par Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIRET en cours d’attribution",
       "index.eyebrow": "Quatre étapes d’entraînement · une méthode", "index.titleA": "Trouve le", "index.titleB": "chemin le plus court.",
       "index.lead": "BRATS 11 ne t’entraîne pas à suivre mécaniquement un calcul. Apprends à reconstruire les nombres, à maîtriser le Killer Move et à réunir les deux habiletés dans la méthode B11 complète.",
       "index.thought": "Remets la règle en question. Garde ce qui est vrai. Coupe le superflu.",
@@ -240,35 +240,34 @@
       "full.codeHint": "Les codes B11 complets ont trois positions. Les nombres sous 121 commencent par 0; X représente dix.", "full.anchorLabel": "Plus grand ancrage de 121",
       "full.km1": "Killer Move 1", "full.add1": "Produit ajouté avec b", "full.sum1": "Premier total", "full.km2": "Killer Move 2", "full.add2": "Produit ajouté avec c", "full.sum2": "Deuxième total",
       "legal.eyebrow": "BRATS 11", "legal.title": "Informations juridiques", "legal.intro": "Mentions légales, confidentialité et conditions des pages d’entraînement.",
-      "legal.imprintTitle": "Mentions légales", "legal.operator": "Responsable de l’exploitation et de la commercialisation", "legal.operatorValue": "Pierre C. U. Singer · Saint-Usuge, France",
-      "legal.idea": "Développement d’idées et signet", "legal.ideaValue": "Singer Shamrock Enterprises · EST. 2026 · Projet en préparation",
-      "legal.contact": "Coordonnées et adresse de signification", "legal.contactMissing": "L’adresse postale complète et le courriel doivent être ajoutés avant la mise en ligne publique.",
-      "legal.hosting": "Hébergement", "legal.hostingMissing": "Le fournisseur d’hébergement définitif et son adresse complète seront ajoutés après le choix de l’hébergement.",
+      "legal.imprintTitle": "Mentions légales", "legal.operator": "Responsable de ce site", "legal.operatorValue": "Pierre Christian Ulrich Singer, Entrepreneur individuel (EI)",
+      "legal.idea": "Statut de la marque", "legal.ideaValue": "Singer Shamrock Enterprises — une marque de Pierre Christian Ulrich Singer, Entrepreneur individuel (EI). EST. 2026 fait partie de l’identité visuelle.",
+      "legal.contact": "Coordonnées et adresse de signification", "legal.siret": "SIRET en cours d’attribution",
+      "legal.hosting": "Hébergement", "legal.hostingValue": "Ce site est hébergé par GitHub Pages, un service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.",
       "legal.privacyTitle": "Confidentialité", "legal.privacy1": "Cette version statique traite les exercices et les réponses entièrement dans le navigateur. Elle ne transmet aucune réponse d’entraînement à un serveur et n’utilise aucun témoin analytique ou publicitaire.",
       "legal.privacy2": "La langue choisie peut être enregistrée localement dans le navigateur. Ce réglage reste sur l’appareil et peut être supprimé en effaçant les données de navigation.",
       "legal.privacy3": "Si des comptes, des mesures d’audience, des services de paiement ou du contenu externe sont ajoutés plus tard, le présent avis devra être mis à jour avant leur activation.",
       "legal.termsTitle": "Conditions d’utilisation", "legal.terms1": "BRATS 11 est un outil d’apprentissage et de pratique du calcul mental stratégique. Les chemins affichés servent à entraîner des transformations mathématiquement équivalentes.",
       "legal.terms2": "Malgré une vérification attentive, la disponibilité continue et l’absence totale d’erreurs ne peuvent être garanties. Aucune décision financière, juridique, médicale ou liée à la sécurité ne doit reposer uniquement sur les résultats de ce site.",
       "legal.terms3": "Le contenu, la conception, les noms et la logique d’entraînement ne peuvent être reproduits ou distribués commercialement comme un autre produit sans autorisation. Les usages privés et exceptions obligatoires prévus par la loi demeurent inchangés.",
-      "legal.version": "Version de travail : 16 septembre 2026"
+      "legal.version": "Mise à jour : 23 septembre 2026"
     }
   };
 
-  const supported = ["de", "en", "fr"];
-  const fallback = "de";
+  const supported = ["en", "fr", "de"];
+  const fallback = "en";
+  const languageStorageKey = "brats11-language-v2";
   function storedLanguage() {
-    try { return localStorage.getItem("brats11-language"); }
+    try { return localStorage.getItem(languageStorageKey); }
     catch { return null; }
   }
   function rememberLanguage(value) {
-    try { localStorage.setItem("brats11-language", value); }
+    try { localStorage.setItem(languageStorageKey, value); }
     catch { /* The trainer still works when storage is unavailable. */ }
   }
-  let language = storedLanguage();
-  if (!supported.includes(language)) {
-    const browserLanguage = (navigator.language || "").toLowerCase();
-    language = browserLanguage.startsWith("fr") ? "fr" : browserLanguage.startsWith("en") ? "en" : fallback;
-  }
+  const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+  let language = supported.includes(requestedLanguage) ? requestedLanguage : storedLanguage();
+  if (!supported.includes(language)) language = fallback;
 
   function t(key, variables = {}) {
     const source = messages[language][key] ?? messages[fallback][key] ?? key;
@@ -290,16 +289,16 @@
       </a>
       <nav class="main-nav" aria-label="Primary">${links.map(([id, href, key]) => `<a href="${href}"${page === id ? ' aria-current="page"' : ""} data-i18n="${key}"></a>`).join("")}</nav>
       <div class="language-switcher" aria-label="Language">
-        <button class="language-button" type="button" data-language="de" data-lang-label="lang.de"><span aria-hidden="true">🇩🇪</span></button>
-        <button class="language-button" type="button" data-language="en" data-lang-label="lang.en"><span aria-hidden="true">🇺🇸</span></button>
-        <button class="language-button" type="button" data-language="fr" data-lang-label="lang.fr"><span aria-hidden="true">🇨🇦</span></button>
+        <button class="language-button" type="button" data-language="en" data-lang-label="lang.en" aria-pressed="false"><span aria-hidden="true">🇺🇸</span></button>
+        <button class="language-button" type="button" data-language="fr" data-lang-label="lang.fr" aria-pressed="false"><span aria-hidden="true">🇨🇦</span></button>
+        <button class="language-button" type="button" data-language="de" data-lang-label="lang.de" aria-pressed="false"><span aria-hidden="true">🇩🇪</span></button>
       </div>
     </div></div>`;
   }
 
   function footerMarkup() {
     return `<div class="site-footer"><div class="site-shell footer-inner">
-      <div class="sse-signet"><strong data-i18n="brand.sse"></strong><span data-i18n="brand.est"></span></div>
+      <a class="sse-signet" href="https://singershamrock.com" target="_blank" rel="noopener noreferrer"><strong data-i18n="brand.sse"></strong><span data-i18n="brand.est"></span></a>
       <div class="footer-links"><span data-i18n="footer.marketing"></span><a href="legal.html#imprint" data-i18n="footer.imprint"></a><a href="legal.html#privacy" data-i18n="footer.privacy"></a><a href="legal.html#terms" data-i18n="footer.terms"></a></div>
     </div></div>`;
   }
@@ -309,7 +308,11 @@
     document.querySelectorAll("[data-i18n]").forEach(element => { element.textContent = t(element.dataset.i18n); });
     document.querySelectorAll("[data-i18n-placeholder]").forEach(element => { element.placeholder = t(element.dataset.i18nPlaceholder); });
     document.querySelectorAll("[data-lang-label]").forEach(element => { element.setAttribute("aria-label", t(element.dataset.langLabel)); element.title = t(element.dataset.langLabel); });
-    document.querySelectorAll("[data-language]").forEach(element => element.classList.toggle("is-active", element.dataset.language === language));
+    document.querySelectorAll("[data-language]").forEach(element => {
+      const active = element.dataset.language === language;
+      element.classList.toggle("is-active", active);
+      element.setAttribute("aria-pressed", active ? "true" : "false");
+    });
     const titleKey = `meta.${document.body.dataset.page || "index"}`;
     document.title = t(titleKey);
   }
