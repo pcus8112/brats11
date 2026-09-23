@@ -1,10 +1,15 @@
-BRATS 11 — BEFORE PUBLIC LAUNCH
+BRATS 11 — RELEASE NOTES
+Updated: 23 September 2026
 
-The site is complete and functional, but the following legal facts were not supplied and must be inserted in assets/common.js before public launch:
+READY FOR THE CURRENT PUBLIC TRAINER
+------------------------------------
+- English (United States) is the default language; French (Canada) and German remain selectable.
+- The legal operator, postal address, telephone number, email address, SIRET status, hosting provider, and Singer Shamrock Enterprises brand attribution are complete.
+- The Singer Shamrock Enterprises text signet links to singershamrock.com.
+- The current trainer remains browser-based and does not add accounts, payments, analytics, advertising, or external content.
 
-1. Full postal/service address of the site operator.
-2. Public contact email address.
-3. Final hosting provider name and full legal address.
-4. The exact approved Singer Shamrock Enterprises logo file. The current build intentionally uses a text signet and does not invent or alter the fixed corporate logo.
-
-If analytics, accounts, payments, advertising, third-party fonts, videos, or other external services are added, update the privacy notice before activating them.
+UPDATE WHEN THE PAID GUIDED COURSE IS ADDED
+-------------------------------------------
+1. Replace “SIRET en cours d’attribution” with the assigned number.
+2. Add the selected consumer mediator and update privacy and terms before activating Payhip, license verification, accounts, or other external services.
+3. If the approved Singer Shamrock Enterprises logo is added later, replace only the text signet; do not alter the logo itself.
