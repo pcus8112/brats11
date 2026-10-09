@@ -5,6 +5,74 @@
 })(typeof window !== "undefined" ? window : globalThis, () => {
   "use strict";
 
+
+  // Exact input parsing: punctuation never disappears without a validated meaning.
+  function rational(numerator, denominator = 1n) {
+    if (denominator === 0n) return null;
+    if (denominator < 0n) { numerator = -numerator; denominator = -denominator; }
+    let a = numerator < 0n ? -numerator : numerator, b = denominator;
+    while (b) [a, b] = [b, a % b];
+    return { numerator: numerator / a, denominator: denominator / a };
+  }
+
+  function parseRational(value) {
+    const text = String(value ?? "").trim().replace(/−/g, "-");
+    if (!text || text.length > 80) return null;
+    function decimal(part) {
+      const match = /^([+-]?)([^.,]+)(?:[.,](\d{1,12}))?$/.exec(part.trim());
+      if (!match) return null;
+      let whole = match[2];
+      if (!/^\d+$/.test(whole)) {
+        // Grouping is allowed only with consistent spaces or apostrophes.
+        if (!/^\d{1,3}([ '\u00a0\u202f’])\d{3}(?:\1\d{3})*$/.test(whole)) return null;
+        whole = whole.replace(/[ '\u00a0\u202f’]/g, "");
+      }
+      const fraction = match[3] || "";
+      const n = BigInt(whole + fraction) * (match[1] === "-" ? -1n : 1n);
+      const d = 10n ** BigInt(fraction.length);
+      if (n > 9007199254740991n * d || n < -9007199254740991n * d) return null;
+      return rational(n, d);
+    }
+    const parts = text.split("/");
+    if (parts.length > 2) return null;
+    const a = decimal(parts[0]);
+    if (!a) return null;
+    if (parts.length === 1) return a;
+    const b = decimal(parts[1]);
+    return b && b.numerator !== 0n ? rational(a.numerator * b.denominator, a.denominator * b.numerator) : null;
+  }
+
+  function integerValue(value) {
+    const parsed = parseRational(value);
+    return parsed && parsed.denominator === 1n && parsed.numerator <= 9007199254740991n && parsed.numerator >= -9007199254740991n ? Number(parsed.numerator) : null;
+  }
+
+  function exactOperator(a, op, b) {
+    if (!a || !b) return null;
+    const an = a.numerator, ad = a.denominator, bn = b.numerator, bd = b.denominator;
+    if (op === "+") return rational(an * bd + bn * ad, ad * bd);
+    if (op === "-") return rational(an * bd - bn * ad, ad * bd);
+    if (op === "*") return rational(an * bn, ad * bd);
+    if (op === "/") return rational(an * bd, ad * bn);
+    return null;
+  }
+
+  function evaluateExactRoute(values, operators, grouping = "normal") {
+    const n = values.map(parseRational);
+    if (n.some(value => !value) || ![2, 3].includes(n.length)) return null;
+    if (n.length === 2) return exactOperator(n[0], operators[0], n[1]);
+    const [a, b, c] = n, [first, second] = operators;
+    if (grouping === "right" || (grouping === "normal" && ["*", "/"].includes(second) && ["+", "-"].includes(first))) {
+      return exactOperator(a, first, exactOperator(b, second, c));
+    }
+    return exactOperator(exactOperator(a, first, b), second, c);
+  }
+
+  function routeEquals(values, operators, grouping, expected) {
+    const value = evaluateExactRoute(values, operators, grouping);
+    return value !== null && value.numerator === BigInt(expected) * value.denominator;
+  }
+
   const symbols = { "+": "+", "-": "−", "*": "×", "/": "÷" };
 
   function randomInt(min, max) {
@@ -52,7 +120,7 @@
   }
 
   function routeToString(route, includeResult = false) {
-    const n = route.numbers.map(formatNumber);
+    const n = route.numbers.map(number => typeof number === "string" ? (number.includes("/") || number.startsWith("-") || number.startsWith("−") ? `(${number})` : number) : formatNumber(number));
     let expression;
     if (n.length === 2) expression = `${n[0]} ${symbols[route.operators[0]]} ${n[1]}`;
     else if (route.grouping === "left") expression = `(${n[0]} ${symbols[route.operators[0]]} ${n[1]}) ${symbols[route.operators[1]]} ${n[2]}`;
@@ -197,7 +265,7 @@
   }
 
   function parseCode(value, length) {
-    const normalized = String(value || "").trim().toUpperCase().replace(/\s+/g, "");
+    const normalized = String(value ?? "").trim().toUpperCase();
     const pattern = length === 2 ? /^[0-9X]{2}$/ : /^[0-9X]{3}$/;
     if (!pattern.test(normalized)) return null;
     const digits = [...normalized].map(character => character === "X" ? 10 : Number(character));
@@ -230,6 +298,10 @@
   }
 
   return {
+    parseRational,
+    integerValue,
+    evaluateExactRoute,
+    routeEquals,
     symbols,
     randomInt,
     choice,

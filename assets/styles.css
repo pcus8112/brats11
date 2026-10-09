@@ -742,3 +742,46 @@ a:focus-visible {
   .footer-links { justify-content: start; }
   .legal-nav { grid-template-columns: 1fr; }
 }
+
+/* October 2026: preserve the four-stage design on small screens too. */
+.booklet-note { margin: 0 0 24px; max-width: 80ch; color: var(--muted); font-size: .86rem; line-height: 1.6; }
+.booklet-note a { text-underline-offset: 3px; }
+.home-example { padding: 18px; border-left: 3px solid var(--yellow); background: rgba(255,212,71,.05); line-height: 1.7; }
+.home-start { display: inline-flex; text-decoration: none; margin-top: 10px; }
+.learning-actions { margin: 0 0 16px; font-weight: 750; }
+.learning-actions a, .next-stage a { color: var(--yellow); text-underline-offset: 4px; }
+.learning-guide { margin: 0 0 24px; padding: 20px 24px; background: rgba(255,255,255,.035); border: 1px solid var(--line); border-radius: 16px; line-height: 1.7; }
+.learning-guide > p { margin: 0 0 14px; color: var(--muted); max-width: 90ch; }
+.learning-guide summary { cursor: pointer; color: var(--yellow); font-weight: 750; padding: 8px 0; }
+.learning-guide summary:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+.learning-guide h3 { margin-bottom: 8px; font-size: 1.05rem; }
+.learning-guide ol { padding-left: 24px; margin-top: 0; }
+.learning-guide li { margin: 6px 0; }
+.input-help { font-size: .85rem; color: var(--muted); max-width: 95ch; line-height: 1.65; }
+.next-stage { text-align: right; margin-top: 24px; }
+.language-button { width: 44px; height: 48px; font-size: 1.1rem; gap: 2px; padding: 3px; }
+.language-button small { font-size: .62rem; color: var(--text); font-weight: 750; }
+input, select { min-width: 0; }
+.trainer-card { scroll-margin-top: 170px; }
+@media (max-width: 1050px) {
+  .header-inner { grid-template-columns: minmax(0,1fr) auto; gap: 10px; padding: 10px 0; }
+  .main-nav { display: flex; grid-column: 1 / -1; grid-row: 2; flex-wrap: wrap; justify-content: flex-start; gap: 2px; }
+  .main-nav a { padding: 11px 10px; min-height: 44px; }
+  .language-switcher { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 680px) {
+  .brand-copy small { display: none; }
+  .brand-copy strong { font-size: .9rem; }
+  .brand-mark { width: 34px; height: 34px; }
+  .brand-link { gap: 7px; }
+  .language-switcher { padding: 3px; gap: 1px; }
+  .language-button { width: 38px; height: 44px; }
+  .page-main { padding-top: 22px; }
+  .learning-guide { padding: 16px; }
+  .field input, .field select, .control-group select { font-size: 16px; }
+  .problem { font-size: clamp(1.55rem, 7vw, 2.8rem); overflow-wrap: anywhere; }
+  .task-badge { max-width: 100%; }
+  .problem-head { flex-wrap: wrap; }
+  .booklet-note { margin-bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }

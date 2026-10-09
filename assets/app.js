@@ -7,24 +7,25 @@
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
   function integerValue(element) {
-    const cleaned = String(element.value || "").trim().replace(/[\s'’.,]/g, "");
-    return /^-?\d+$/.test(cleaned) ? Number(cleaned) : null;
+    return E.integerValue(element.value);
   }
 
   function resetField(element) {
     if (!element) return;
     element.value = "";
     element.classList.remove("correct", "wrong");
+    element.removeAttribute("aria-invalid");
     const feedback = document.getElementById(`${element.id}-feedback`);
     if (feedback) feedback.textContent = "";
   }
 
   function checkField(element, actual, expected, display = expected) {
-    const correct = actual === expected;
+    const correct = actual !== null && actual === expected;
+    element.setAttribute("aria-invalid", String(!correct));
     element.classList.toggle("correct", correct);
     element.classList.toggle("wrong", !correct);
     const feedback = document.getElementById(`${element.id}-feedback`);
-    if (feedback) feedback.textContent = correct ? "" : S.t("common.expected", { value: String(display) });
+    if (feedback) feedback.textContent = correct ? "" : (actual === null ? S.t(element.id === "code" ? "common.invalidCode" : "common.invalidNumber") + " " : "") + S.t("common.expected", { value: typeof display === "number" ? S.number(display) : String(display) });
     return correct;
   }
 
@@ -65,14 +66,13 @@
     const originalOperator = type => ({ add: "+", sub: "-", mul: "*", div: "/" })[type];
 
     function refreshPreview() {
-      const a = integerValue(firstNumber);
-      const b = integerValue(secondNumber);
-      const c = integerValue(thirdNumber);
-      if (a === null || b === null) {
-        preview.textContent = S.t("rfd.preview");
+      const values = [firstNumber.value, secondNumber.value];
+      if (thirdNumber.value.trim()) values.push(thirdNumber.value);
+      if (values.some(value => !E.parseRational(value))) {
+        preview.textContent = values.some(value => value.trim()) ? S.t("common.invalidRoute") : S.t("rfd.preview");
         return;
       }
-      const route = { numbers: c === null ? [a, b] : [a, b, c], operators: c === null ? [firstOperator.value] : [firstOperator.value, secondOperator.value], grouping: grouping.value };
+      const route = { numbers: values.map(value => value.trim()), operators: [firstOperator.value, secondOperator.value], grouping: grouping.value };
       preview.textContent = E.routeToString(route);
     }
 
@@ -86,44 +86,47 @@
       refreshPreview();
     }
 
-    function newTask() {
+    function newTask(event) {
       task = E.rfdTask(Number(level.value), operation.value);
       problem.innerHTML = `${E.formatNumber(task.a)} <span class="accent">${E.symbols[originalOperator(task.type)]}</span> ${E.formatNumber(task.b)}`;
       clear();
-      firstNumber.focus();
+      if (event) firstNumber.focus();
     }
 
     function alternativesMarkup() {
       return `<div class="alternatives">${task.alternatives.map(route => `<div class="alternative">${E.routeToString(route, true)}</div>`).join("")}</div>`;
     }
 
-    form.addEventListener("submit", event => {
-      event.preventDefault();
-      const a = integerValue(firstNumber);
-      const b = integerValue(secondNumber);
-      const c = integerValue(thirdNumber);
-      const enteredResult = integerValue(resultInput);
-      const numbers = c === null ? [a, b] : [a, b, c];
-      const operators = c === null ? [firstOperator.value] : [firstOperator.value, secondOperator.value];
-      const routeValue = a === null || b === null ? null : E.evaluateRoute(numbers, operators, grouping.value);
-      const routeCorrect = routeValue !== null && Math.abs(routeValue - task.result) < 1e-10;
-      const resultCorrect = enteredResult === task.result;
-      [firstNumber, secondNumber, thirdNumber].forEach(field => field.classList.toggle("wrong", !routeCorrect));
-      [firstNumber, secondNumber, thirdNumber].forEach(field => field.classList.toggle("correct", routeCorrect));
+    function checkAnswer() {
+      const values = [firstNumber.value, secondNumber.value];
+      const hasThird = thirdNumber.value.trim() !== "";
+      if (hasThird) values.push(thirdNumber.value);
+      const operators = [firstOperator.value, secondOperator.value];
+      const parsed = E.evaluateExactRoute(values, operators, grouping.value);
+      const routeCorrect = E.routeEquals(values, operators, grouping.value, task.result);
+      const resultCorrect = integerValue(resultInput) === task.result;
+      [firstNumber, secondNumber, ...(hasThird ? [thirdNumber] : [])].forEach(field => {
+        field.classList.toggle("wrong", !routeCorrect);
+        field.classList.toggle("correct", routeCorrect);
+        field.setAttribute("aria-invalid", String(!routeCorrect));
+      });
       resultInput.classList.toggle("correct", resultCorrect);
       resultInput.classList.toggle("wrong", !resultCorrect);
-      const direct = c === null && a === task.a && b === task.b && firstOperator.value === originalOperator(task.type);
+      resultInput.setAttribute("aria-invalid", String(!resultCorrect));
+      const direct = !hasThird && integerValue(firstNumber) === task.a && integerValue(secondNumber) === task.b && firstOperator.value === originalOperator(task.type);
       const success = routeCorrect && resultCorrect;
-      const message = success ? (direct ? S.t("common.routeDirect") : S.t("common.routeValid")) : S.t("common.routeWrong");
+      let message = success ? S.t(direct ? "common.routeDirect" : "common.routeValid") : !parsed ? S.t("common.invalidRoute") : S.t("common.routeWrong");
+      if (!resultCorrect) message += " " + S.t("common.expected", { value: S.number(task.result) });
       result.className = `result show ${success ? "success" : "failure"}`;
       result.innerHTML = `<h3>${S.t(success ? "common.correct" : "common.incorrect")}</h3><p>${message}</p><h3 style="margin-top:14px">${S.t(success ? "common.otherAlternatives" : "common.alternatives")}</h3>${alternativesMarkup()}`;
-    });
+    }
+    form.addEventListener("submit", event => { event.preventDefault(); checkAnswer(); });
 
     [firstNumber, secondNumber, thirdNumber, firstOperator, secondOperator, grouping].forEach(element => element.addEventListener("input", refreshPreview));
     $("#new-problem").addEventListener("click", newTask);
     level.addEventListener("change", newTask);
     operation.addEventListener("change", newTask);
-    window.addEventListener("brats11:languagechange", refreshPreview);
+    window.addEventListener("brats11:languagechange", () => { refreshPreview(); if (result.classList.contains("show")) checkAnswer(); });
     bindEnterFlow(form);
     newTask();
   }
@@ -145,7 +148,7 @@
       finalLabel.textContent = S.t("killer.finalLabel", { n: number });
     }
 
-    function newTask() {
+    function newTask(event) {
       const selected = Number(level.value);
       const min = selected === 1 ? 10 : selected === 2 ? 100 : 1000;
       const max = selected === 1 ? 99 : selected === 2 ? 999 : 9999;
@@ -155,21 +158,22 @@
       result.className = "result";
       result.innerHTML = "";
       updateLabels();
-      tenfold.focus();
+      if (event) tenfold.focus();
     }
 
-    form.addEventListener("submit", event => {
-      event.preventDefault();
+    function checkAnswer() {
       const checks = [
         checkField(tenfold, integerValue(tenfold), number * 10),
         checkField(final, integerValue(final), number * 11)
       ];
       const success = checks.every(Boolean);
-      showSimpleResult(result, success, success ? S.t("common.allCorrect") : S.t("common.reviewFields"));
-    });
+      const worked = `${number} × 10 = ${number * 10}; ${number * 10} + ${number} = ${number * 11}.`;
+      showSimpleResult(result, success, S.t(success ? "common.allCorrect" : "common.reviewFields") + " " + worked);
+    }
+    form.addEventListener("submit", event => { event.preventDefault(); checkAnswer(); });
     level.addEventListener("change", newTask);
     $("#new-problem").addEventListener("click", newTask);
-    window.addEventListener("brats11:languagechange", updateLabels);
+    window.addEventListener("brats11:languagechange", () => { updateLabels(); if (result.classList.contains("show")) checkAnswer(); });
     bindEnterFlow(form);
     newTask();
   }
@@ -219,18 +223,19 @@
       const first = digits[0] === undefined ? "a" : E.b11Digit(digits[0]);
       const second = digits[1] === undefined ? "b" : E.b11Digit(digits[1]);
       $("#start-label").textContent = `${S.t("common.start")}: ${task.base} × ${first}`;
-      $("#km1-label").textContent = `${isSoft ? S.t("soft.kmLabel") : S.t("full.km1")}: × 11`;
+      const firstValue = currentCode ? task.base * currentCode.first : "…";
+      $("#km1-label").textContent = `${isSoft ? S.t("soft.kmLabel") : S.t("full.km1")}: ${firstValue} × 11`;
       $("#add1-label").textContent = `${isSoft ? S.t("soft.addLabel") : S.t("full.add1")}: ${task.base} × ${second}`;
-      $("#sum1-label").textContent = isSoft ? S.t("soft.sumLabel") : S.t("full.sum1");
+      $("#sum1-label").textContent = `${isSoft ? S.t("soft.sumLabel") : S.t("full.sum1")}: ${currentCode ? firstValue * 11 : "…"} + ${currentCode ? task.base * currentCode.second : "…"}`;
       if (!isSoft) {
         const third = digits[2] === undefined ? "c" : E.b11Digit(digits[2]);
-        $("#km2-label").textContent = `${S.t("full.km2")}: × 11`;
+        $("#km2-label").textContent = `${S.t("full.km2")}: ${currentCode ? firstValue * 11 + task.base * currentCode.second : "…"} × 11`;
         $("#add2-label").textContent = `${S.t("full.add2")}: ${task.base} × ${third}`;
-        $("#sum2-label").textContent = S.t("full.sum2");
+        $("#sum2-label").textContent = `${S.t("full.sum2")}: ${currentCode ? (firstValue * 11 + task.base * currentCode.second) * 11 : "…"} + ${currentCode ? task.base * currentCode.third : "…"}`;
       }
     }
 
-    function applyMode() {
+    function applyMode(focus = false) {
       const selected = mode();
       const showCode = selected === "create" || selected === "full";
       const showExecution = selected === "apply" || selected === "full";
@@ -239,14 +244,14 @@
       givenCode.classList.toggle("hidden", selected !== "apply");
       updateLabels();
       const firstVisible = $$('input[type="text"]', form).find(field => field.offsetParent !== null);
-      if (firstVisible) firstVisible.focus();
+      if (focus && firstVisible) firstVisible.focus();
     }
 
-    function newTask() {
+    function newTask(event) {
       task = isSoft ? E.softTask(Number(level.value)) : E.fullTask();
       setProblem();
       clear();
-      applyMode();
+      applyMode(Boolean(event));
     }
 
     function expectedValues() {
@@ -261,38 +266,47 @@
       return { start: first, km1, add1, sum1, km2, add2, sum2 };
     }
 
-    form.addEventListener("submit", event => {
-      event.preventDefault();
+    function checkAnswer() {
       const selected = mode();
       const checks = [];
+      let codeReady = true;
       if (selected === "create" || selected === "full") {
         checks.push(checkField(anchor, integerValue(anchor), task.code.anchor));
         checks.push(checkField(remainder, integerValue(remainder), task.code.remainder));
         const entered = E.parseCode(code.value, isSoft ? 2 : 3);
-        checks.push(checkField(code, entered ? entered.text : null, task.code.text, task.code.text));
+        codeReady = checkField(code, entered ? entered.text : null, task.code.text, task.code.text);
+        checks.push(codeReady);
       }
-      if (selected === "apply" || selected === "full") {
+      if ((selected === "apply" || selected === "full") && codeReady) {
         const expected = expectedValues();
         Object.entries(expected).forEach(([id, value]) => checks.push(checkField(document.getElementById(id), integerValue(document.getElementById(id)), value)));
       }
       const success = checks.every(Boolean);
-      showSimpleResult(result, success, success ? S.t("common.allCorrect") : `${S.t("common.reviewFields")} ${S.t("common.expected", { value: task.result })}`);
-    });
+      const digits = task.code.digits;
+      const decoding = isSoft ? `${digits[0]} × 11 + ${digits[1]}` : `${digits[0]} × 121 + ${digits[1]} × 11 + ${digits[2]}`;
+      const explanation = `${task.code.text}₁₁ = ${decoding} = ${task.target}.`;
+      showSimpleResult(result, success, S.t(success ? "common.allCorrect" : !codeReady && selected === "full" ? "common.codeFirst" : "common.reviewFields") + " " + explanation);
+    }
+    form.addEventListener("submit", event => { event.preventDefault(); checkAnswer(); });
 
-    $$('input[name="mode"]', form).forEach(input => input.addEventListener("change", () => { clear(); applyMode(); }));
-    code.addEventListener("input", () => {
-      const length = isSoft ? 2 : 3;
-      code.value = code.value.toUpperCase().replace(/[^0-9X]/g, "").slice(0, length);
-      updateLabels();
-    });
+    $$('input[name="mode"]', form).forEach(input => input.addEventListener("change", () => { clear(); applyMode(true); }));
+    code.addEventListener("input", updateLabels);
     if (level) level.addEventListener("change", newTask);
     $("#new-problem").addEventListener("click", newTask);
-    window.addEventListener("brats11:languagechange", updateLabels);
+    window.addEventListener("brats11:languagechange", () => { updateLabels(); if (result.classList.contains("show")) checkAnswer(); });
     bindEnterFlow(form);
     newTask();
   }
 
   function initialize() {
+    document.querySelectorAll("form").forEach(form => form.addEventListener("input", () => {
+      const result = form.querySelector(".result");
+      if (result) { result.className = "result"; result.textContent = ""; }
+      form.querySelectorAll("input").forEach(field => {
+        field.classList.remove("correct", "wrong"); field.removeAttribute("aria-invalid");
+      });
+      form.querySelectorAll(".feedback").forEach(field => { field.textContent = ""; });
+    }));
     const page = document.body.dataset.page;
     if (page === "rfd") initRfd();
     else if (page === "killer") initKiller();
