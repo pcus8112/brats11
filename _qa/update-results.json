@@ -1,0 +1,20 @@
+{
+  "method": "Source checks and Happy DOM simulation; no visual browser rendering",
+  "staticPages": 6,
+  "hydratedPages": 18,
+  "selfModeCases": 18,
+  "rfdDefaults": 3,
+  "buttonContrast": {
+    "normal": {
+      "background": "#c91850",
+      "foreground": "#ffffff",
+      "ratio": 5.63
+    },
+    "hover": {
+      "background": "#ad1243",
+      "foreground": "#ffffff",
+      "ratio": 7.132
+    }
+  },
+  "failures": []
+}
