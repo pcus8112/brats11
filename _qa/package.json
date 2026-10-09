@@ -1,0 +1,8 @@
+{
+  "name": "brats11-optional-qa",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "happy-dom": "20.14.6"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "method": "CSS rule resolution only; no layout renderer",
+  "checks": [
+    {
+      "width": 320,
+      "navigation": "flex",
+      "grid": "minmax(0,1fr) auto"
+    },
+    {
+      "width": 375,
+      "navigation": "flex",
+      "grid": "minmax(0,1fr) auto"
+    },
+    {
+      "width": 390,
+      "navigation": "flex",
+      "grid": "minmax(0,1fr) auto"
+    },
+    {
+      "width": 768,
+      "navigation": "flex",
+      "grid": "minmax(0,1fr) auto"
+    },
+    {
+      "width": 900,
+      "navigation": "flex",
+      "grid": "minmax(0,1fr) auto"
+    },
+    {
+      "width": 1050,
+      "navigation": "flex",
+      "grid": "minmax(0,1fr) auto"
+    },
+    {
+      "width": 1280,
+      "navigation": "flex",
+      "grid": "auto 1fr auto"
+    }
+  ]
+}

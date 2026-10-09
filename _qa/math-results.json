@@ -1,0 +1,10 @@
+{
+  "integerInputs": 65,
+  "rationalInputs": 10,
+  "exactRoutes": 22,
+  "codeRoundTrips": 990,
+  "invalidCodes": 14,
+  "rfdTasks": 4500,
+  "softTasks": 3000,
+  "fullTasks": 1000
+}

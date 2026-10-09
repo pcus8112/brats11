@@ -1,0 +1,13 @@
+{
+  "environment": "Happy DOM 20.14.6 (DOM simulation, no visual browser rendering)",
+  "configurationRuns": 90,
+  "distinctConfigurations": 30,
+  "answerSubmissions": 371,
+  "languageFeedbackChecks": 33,
+  "pageLanguageChecks": 18,
+  "translatedElements": 624,
+  "localLinks": 207,
+  "formLabels": 108,
+  "storageBlocked": 6,
+  "failures": []
+}
