@@ -24,7 +24,7 @@
       "footer.imprint": "Impressum",
       "footer.privacy": "Datenschutz",
       "footer.terms": "Nutzungsbedingungen",
-      "footer.marketing": "Betrieben von Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIRET en cours d’attribution",
+      "footer.marketing": "Betrieben von Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIREN 131 236 408 · RCS Chalon-sur-Saône",
       "index.eyebrow": "Vier Trainingsstufen · eine Methode",
       "index.titleA": "Finde den",
       "index.titleB": "kürzeren Weg.",
@@ -136,7 +136,7 @@
       "legal.idea": "Markenstatus",
       "legal.ideaValue": "Singer Shamrock Enterprises — eine Marke von Pierre Christian Ulrich Singer, Entrepreneur individuel (EI). EST. 2026 ist Bestandteil des Brandings.",
       "legal.contact": "Kontakt und ladungsfähige Anschrift",
-      "legal.siret": "SIRET en cours d’attribution",
+      "legal.registration": "SIREN 131 236 408 · RCS Chalon-sur-Saône",
       "legal.hosting": "Hosting",
       "legal.hostingValue": "Diese Website wird über GitHub Pages von GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, bereitgestellt.",
       "legal.privacyTitle": "Datenschutz",
@@ -159,7 +159,7 @@
       "nav.home": "Home", "nav.rfd": "RFD", "nav.killer": "×11", "nav.soft": "B11 Soft", "nav.full": "Full B11", "nav.legal": "Legal",
       "brand.method": "Home of the B11 Method", "brand.sse": "Singer Shamrock Enterprises", "brand.est": "A brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026",
       "lang.de": "German", "lang.en": "English (USA)", "lang.fr": "French (Canada)",
-      "footer.imprint": "Legal notice", "footer.privacy": "Privacy", "footer.terms": "Terms", "footer.marketing": "Operated by Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIRET en cours d’attribution",
+      "footer.imprint": "Legal notice", "footer.privacy": "Privacy", "footer.terms": "Terms", "footer.marketing": "Operated by Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIREN 131 236 408 · RCS Chalon-sur-Saône",
       "index.eyebrow": "Four training stages · one method", "index.titleA": "Find the", "index.titleB": "shorter route.",
       "index.lead": "BRATS 11 does not train you to grind through a calculation. Learn to rebuild numbers, master the Killer Move, and combine both skills in the complete B11 Method.",
       "index.thought": "Question the rule. Keep the truth. Cut the grind.",
@@ -193,7 +193,7 @@
       "legal.eyebrow": "BRATS 11", "legal.title": "Legal information", "legal.intro": "Legal notice, privacy information, and terms for the training site.",
       "legal.imprintTitle": "Legal notice", "legal.operator": "Responsible for this website", "legal.operatorValue": "Pierre Christian Ulrich Singer, Entrepreneur individuel (EI)",
       "legal.idea": "Brand status", "legal.ideaValue": "Singer Shamrock Enterprises — a brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI). EST. 2026 is part of the branding.",
-      "legal.contact": "Contact and service address", "legal.siret": "SIRET en cours d’attribution",
+      "legal.contact": "Contact and service address", "legal.registration": "SIREN 131 236 408 · RCS Chalon-sur-Saône",
       "legal.hosting": "Hosting", "legal.hostingValue": "This website is hosted through GitHub Pages by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.",
       "legal.privacyTitle": "Privacy", "legal.privacy1": "This static version processes problems and answers entirely in the browser. It does not send training answers to a server and does not use analytics or advertising cookies.",
       "legal.privacy2": "The selected language may be stored locally in the browser. It remains on that device and can be removed by clearing browser data.",
@@ -208,8 +208,8 @@
       "nav.home": "Accueil", "nav.rfd": "RFD", "nav.killer": "×11", "nav.soft": "B11 Soft", "nav.full": "B11 complet", "nav.legal": "Mentions légales",
       "brand.method": "Accueil de la méthode B11", "brand.sse": "Singer Shamrock Enterprises", "brand.est": "Une marque de Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026",
       "lang.de": "Allemand", "lang.en": "Anglais (É.-U.)", "lang.fr": "Français (Canada)",
-      "footer.imprint": "Mentions légales", "footer.privacy": "Confidentialité", "footer.terms": "Conditions", "footer.marketing": "Exploité par Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIRET en cours d’attribution",
-      "index.eyebrow": "Quatre étapes d’entraînement · une méthode", "index.titleA": "Trouve le", "index.titleB": "chemin le plus court.",
+      "footer.imprint": "Mentions légales", "footer.privacy": "Confidentialité", "footer.terms": "Conditions", "footer.marketing": "Exploité par Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIREN 131 236 408 · RCS Chalon-sur-Saône",
+      "index.eyebrow": "Quatre étapes d’entraînement · une méthode", "index.titleA": "Trouve un", "index.titleB": "chemin plus simple.",
       "index.lead": "BRATS 11 ne t’entraîne pas à suivre mécaniquement un calcul. Apprends à reconstruire les nombres, à maîtriser le Killer Move et à réunir les deux habiletés dans la méthode B11 complète.",
       "index.thought": "Remets la règle en question. Garde ce qui est vrai. Coupe le superflu.",
       "index.card1.kicker": "01 · Fondation", "index.card1.title": "Entraînement RFD", "index.card1.text": "Transforme additions, soustractions, multiplications et divisions en calculs plus faciles.",
@@ -242,7 +242,7 @@
       "legal.eyebrow": "BRATS 11", "legal.title": "Informations juridiques", "legal.intro": "Mentions légales, confidentialité et conditions des pages d’entraînement.",
       "legal.imprintTitle": "Mentions légales", "legal.operator": "Responsable de ce site", "legal.operatorValue": "Pierre Christian Ulrich Singer, Entrepreneur individuel (EI)",
       "legal.idea": "Statut de la marque", "legal.ideaValue": "Singer Shamrock Enterprises — une marque de Pierre Christian Ulrich Singer, Entrepreneur individuel (EI). EST. 2026 fait partie de l’identité visuelle.",
-      "legal.contact": "Coordonnées et adresse de signification", "legal.siret": "SIRET en cours d’attribution",
+      "legal.contact": "Coordonnées et adresse de signification", "legal.registration": "SIREN 131 236 408 · RCS Chalon-sur-Saône",
       "legal.hosting": "Hébergement", "legal.hostingValue": "Ce site est hébergé par GitHub Pages, un service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.",
       "legal.privacyTitle": "Confidentialité", "legal.privacy1": "Cette version statique traite les exercices et les réponses entièrement dans le navigateur. Elle ne transmet aucune réponse d’entraînement à un serveur et n’utilise aucun témoin analytique ou publicitaire.",
       "legal.privacy2": "La langue choisie peut être enregistrée localement dans le navigateur. Ce réglage reste sur l’appareil et peut être supprimé en effaçant les données de navigation.",
@@ -360,7 +360,7 @@
     if (header) header.innerHTML = headerMarkup();
     if (footer) footer.innerHTML = footerMarkup();
     const main = document.querySelector("main");
-    if (main && document.body.dataset.page !== "legal") {
+    if (main && document.body.dataset.page !== "legal" && !main.querySelector(".booklet-note")) {
       const note = document.createElement("p"); note.className = "booklet-note";
       const link = document.createElement("a"); link.href = "https://singershamrock.com/booklets.html"; link.dataset.i18n = "booklet";
       note.append(link); main.prepend(note);

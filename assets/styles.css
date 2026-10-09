@@ -520,8 +520,8 @@ a:focus-visible {
 
 .button:hover { transform: translateY(-1px); }
 .button:active { transform: translateY(0); }
-.button-primary { background: var(--pink); color: white; }
-.button-primary:hover { background: var(--pink-dark); }
+.button-primary { background: var(--pink-dark); color: white; }
+.button-primary:hover { background: #ad1243; }
 .button-secondary { border-color: var(--line); background: var(--panel-2); color: var(--text); }
 
 .result {

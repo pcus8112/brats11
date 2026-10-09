@@ -223,6 +223,20 @@
       const first = digits[0] === undefined ? "a" : E.b11Digit(digits[0]);
       const second = digits[1] === undefined ? "b" : E.b11Digit(digits[1]);
       $("#start-label").textContent = `${S.t("common.start")}: ${task.base} × ${first}`;
+      // Independent practice names the steps without supplying their answers.
+      // Code digits are the learner's own input; numeric hints remain in Apply.
+      if (mode() !== "apply") {
+        $("#km1-label").textContent = isSoft ? S.t("soft.kmLabel") : `${S.t("full.km1")}: ${S.t("common.start")} × 11`;
+        $("#add1-label").textContent = `${S.t(isSoft ? "soft.addLabel" : "full.add1")}: ${task.base} × ${second}`;
+        $("#sum1-label").textContent = isSoft ? S.t("soft.sumLabel") : `${S.t("full.sum1")}: ${S.t("full.km1")} + ${S.t("full.add1")}`;
+        if (!isSoft) {
+          const third = digits[2] === undefined ? "c" : E.b11Digit(digits[2]);
+          $("#km2-label").textContent = `${S.t("full.km2")}: ${S.t("full.sum1")} × 11`;
+          $("#add2-label").textContent = `${S.t("full.add2")}: ${task.base} × ${third}`;
+          $("#sum2-label").textContent = `${S.t("full.sum2")}: ${S.t("full.km2")} + ${S.t("full.add2")}`;
+        }
+        return;
+      }
       const firstValue = currentCode ? task.base * currentCode.first : "…";
       $("#km1-label").textContent = `${isSoft ? S.t("soft.kmLabel") : S.t("full.km1")}: ${firstValue} × 11`;
       $("#add1-label").textContent = `${isSoft ? S.t("soft.addLabel") : S.t("full.add1")}: ${task.base} × ${second}`;
