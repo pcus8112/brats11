@@ -1,15 +1,21 @@
-BRATS 11 — RELEASE NOTES
-Updated: 23 September 2026
+BRATS11 – UPLOAD-ANLEITUNG
+9. Oktober 2026
 
-READY FOR THE CURRENT PUBLIC TRAINER
-------------------------------------
-- English (United States) is the default language; French (Canada) and German remain selectable.
-- The legal operator, postal address, telephone number, email address, SIRET status, hosting provider, and Singer Shamrock Enterprises brand attribution are complete.
-- The Singer Shamrock Enterprises text signet links to singershamrock.com.
-- The current trainer remains browser-based and does not add accounts, payments, analytics, advertising, or external content.
+1. BRATS11_FINAL.zip entpacken.
+2. Den INHALT in das bestehende GitHub-Pages-Veröffentlichungsverzeichnis
+   hochladen/übernehmen. index.html und assets/ müssen auf derselben Ebene
+   liegen, nicht in einem zusätzlichen Ordner BRATS11_FINAL.
+3. Vorhandene gleichnamige Dateien durch die enthaltenen Fassungen ersetzen.
+   CNAME (ohne .txt) enthält brats11.com. Ein altes CNAME.txt ist nicht erforderlich.
+   .nojekyll ebenfalls übernehmen; manche Dateimanager blenden diese Datei aus.
+4. Bestehende GitHub-Pages-/Domain-Einstellungen beibehalten. Für eine reine
+   statische Branch-Veröffentlichung ist kein Build-Schritt erforderlich.
+5. Nach Abschluss des Deployments die Seite neu laden und alle vier Lernstufen
+   in Englisch, Französisch und Deutsch öffnen. Desktop und Smartphone prüfen.
+6. Vor öffentlicher Werbung muss https://singershamrock.com/booklets.html
+   funktionieren. Am 9.10.2026 lieferte die separat geplante Zielseite noch 404.
 
-UPDATE WHEN THE PAID GUIDED COURSE IS ADDED
--------------------------------------------
-1. Replace “SIRET en cours d’attribution” with the assigned number.
-2. Add the selected consumer mediator and update privacy and terms before activating Payhip, license verification, accounts, or other external services.
-3. If the approved Singer Shamrock Enterprises logo is added later, replace only the text signet; do not alter the logo itself.
+BERICHT.txt enthält Änderungen, belegte Tests und verbleibende Einschränkungen.
+_qa enthält reproduzierbare Tests und Ergebnisprotokolle. Dieser Ordner wird
+von der Website nicht geladen und ist für ihren Betrieb nicht erforderlich.
+Es gibt keine notwendigen npm-Pakete, keinen Server und keine Zahlungsfunktionen.

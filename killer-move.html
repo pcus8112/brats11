@@ -6,19 +6,22 @@
   <meta name="description" content="Train the BRATS 11 Killer Move: multiply by eleven as 10x + x.">
   <meta name="theme-color" content="#031329">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307080d'/%3E%3Cpath d='M10 18h44v7H10zm0 21h44v7H10z' fill='%23ff3b78'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='900' fill='%23ffd447'%3EB11%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20260923-1">
+  <link rel="stylesheet" href="assets/styles.css?v=20261009-1">
   <title>Killer Move ×11 — BRATS 11</title>
-  <script src="assets/common.js?v=20260923-1" defer></script>
-  <script src="assets/engine.js" defer></script>
-  <script src="assets/app.js" defer></script>
+  <script src="assets/common.js?v=20261009-1" defer></script>
+  <script src="assets/engine.js?v=20261009-1" defer></script>
+  <script src="assets/app.js?v=20261009-1" defer></script>
 </head>
 <body data-page="killer">
   <header id="site-header"></header>
-  <main class="site-shell page-main">
+  <noscript><p class="site-shell">Enable JavaScript to use the exercises. / Activez JavaScript pour utiliser les exercices. / Aktiviere JavaScript für die Übungen.</p></noscript>
+  <main class="site-shell page-main" id="main">
     <div class="page-intro">
       <div><p class="eyebrow" data-i18n="killer.eyebrow"></p><h1 data-i18n="killer.title"></h1></div>
       <p data-i18n="killer.intro"></p>
     </div>
+    <p class="learning-actions"><a href="#killer-form" data-i18n="learn.try"></a></p>
+    <section class="learning-guide" id="learning-guide"></section>
     <form class="trainer-card" id="killer-form" novalidate>
       <div class="control-bar">
         <div class="control-group">
@@ -30,15 +33,17 @@
         <div class="problem-head"><div><p class="problem-label" data-i18n="common.task"></p><p class="problem" id="problem" aria-live="polite"></p></div><div class="task-badge"><small data-i18n="killer.rule"></small><strong>10x + x</strong></div></div>
         <section class="section">
           <div class="fields two">
-            <div class="field"><label id="killer-tenfold-label" for="killer-tenfold"></label><input id="killer-tenfold" type="text" inputmode="numeric" autocomplete="off" aria-describedby="killer-tenfold-feedback"><p class="feedback" id="killer-tenfold-feedback"></p></div>
-            <div class="field"><label id="killer-final-label" for="killer-final"></label><input id="killer-final" type="text" inputmode="numeric" autocomplete="off" aria-describedby="killer-final-feedback"><p class="feedback" id="killer-final-feedback"></p></div>
+            <div class="field"><label id="killer-tenfold-label" for="killer-tenfold"></label><input id="killer-tenfold" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help killer-tenfold-feedback"><p class="feedback" id="killer-tenfold-feedback"></p></div>
+            <div class="field"><label id="killer-final-label" for="killer-final"></label><input id="killer-final" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help killer-final-feedback"><p class="feedback" id="killer-final-feedback"></p></div>
           </div>
           <p class="note" data-i18n="killer.ruleText"></p>
         </section>
+        <p class="input-help" id="input-help" data-i18n="common.inputHelp"></p>
         <div class="actions"><button class="button button-primary" type="submit" data-i18n="common.check"></button><button class="button button-secondary" id="new-problem" type="button" data-i18n="common.new"></button></div>
         <div class="result" id="result" role="status" aria-live="polite"></div>
       </div>
     </form>
+    <p class="next-stage"><a href="b11-soft.html"><span data-i18n="learn.next"></span> →</a></p>
   </main>
   <footer id="site-footer"></footer>
 </body>
