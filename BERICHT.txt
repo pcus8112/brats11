@@ -1,159 +1,112 @@
 BRATS11 – ÄNDERUNGS- UND TESTBERICHT
-Stand: 9. Oktober 2026
-Auftraggeber: Singer Shamrock Enterprises
-Grundlage: vollständig übermitteltes Originalarchiv Brats11.zip (12 Dateien).
+9. Oktober 2026 · Asset-Version 20261009-2
+Grundlage: zuletzt übermitteltes BRATS11_FINAL.zip mit 24 Dateien.
 
 ERGEBNIS
-Die beauftragte BRATS11-Überarbeitung ist im vollständigen statischen Paket
-umgesetzt. Alle durchführbaren Mathematik-, DOM- und Strukturtests sind erfolgreich.
-Die visuelle Browser-/Geräteprüfung war technisch nicht durchführbar.
-Dieses Archiv ist ein Upload-Paket, keine bereits veröffentlichte Website und
-keine vorbehaltlose Werbefreigabe. MathFinalGirl wurde nicht bearbeitet.
+Die besprochenen Korrekturen sind im vollständigen Upload-Paket umgesetzt.
+Alle ausgeführten automatisierten Prüfungen sind erfolgreich. Dieses Paket
+wurde noch nicht auf brats11.com veröffentlicht. Der frühere Live-Audit
+beschreibt die vorherige Fassung, nicht diese neue Version.
 
-ÄNDERUNGEN UND BESTÄTIGTE FEHLER
-1. Zahlen werden nicht mehr durch pauschales Löschen von Satzzeichen verändert.
-   Bei 33 × 11 werden 3,30 / 3.63 nicht als 330 / 363 akzeptiert.
-   Dasselbe gilt für sämtliche numerischen Trainingsfelder.
-2. Exakte Prüfung mit rationalen Zahlen statt einer Rundungstoleranz:
-   363.000000000001 ist nicht 363. Brüche und Dezimalschreibweisen werden
-   nach ihrem tatsächlichen Wert geprüft. RFD darf gebrochene Zwischenschritte
-   enthalten; die übrigen Ergebnisfelder verlangen den gefragten ganzen Wert.
-3. Ein ungültiges optionales drittes RFD-Feld wird nicht mehr als leer behandelt.
-   Beispiel: 33 × 11 + oops mit Endergebnis 363 wird zurückgewiesen.
-4. Codeeingaben werden nicht mehr stillschweigend bereinigt oder nach zwei/drei
-   Zeichen abgeschnitten. 26! wird nicht zu 26; falsche Längen werden gemeldet.
-   Kleinbuchstabe x und äußere Leerzeichen sind zulässig; innere Leerzeichen nicht.
-5. Bereits angezeigtes Feedback wechselt jetzt mit der Sprache. Eingaben und
-   aktuelle Aufgabe bleiben dabei erhalten. Bearbeiten einer Antwort entfernt
-   veraltete Richtig-/Falsch-Markierungen.
-6. Bei falschem Code im Modus „Alles selbst“ wird zuerst zur Codekorrektur
-   aufgefordert. Die anschließende Leiterprüfung widerspricht nicht mehr dem
-   vom Lernenden eingetragenen Code.
-7. Hauptnavigation wird auf kleinen Bildschirmen nicht mehr ausgeblendet.
-   Sie verteilt sich bei Bedarf auf weitere Zeilen. Sprachkürzel ergänzen Flaggen.
-   Beschriftungen der Navigation und Formularfelder sind übersetzt.
-8. Beim ersten Seitenaufruf springt der Fokus nicht mehr über die Einführung
-   hinweg direkt in ein Eingabefeld. „Zu den Übungen“ ermöglicht den direkten Weg.
-9. Die verkürzte Soft-Leiter „+b“ wurde berichtigt: Addiert wird Grundfaktor × b.
-10. CNAME.txt wurde in die von GitHub Pages erwartete Datei CNAME umbenannt.
-    .nojekyll wurde ergänzt. Vorhandene sechs HTML-Pfade bleiben erhalten.
-    Aktualisierte Asset-Versionen vermeiden veraltete Skripte im Browsercache.
+UMGESETZTE AUDITPUNKTE
+1. „Alles selbst“ bei B11 Soft und Full B11:
+   Die Feldbeschriftungen nennen Rechenschritte ohne errechnete Zwischenwerte.
+   Start und Zusatzprodukte verwenden die selbst eingegebenen Codeziffern.
+   Im Modus „Code anwenden“ bleiben die rechnerischen Hilfen verfügbar.
+   Die Antwortprüfung und Rückmeldung nach dem Prüfen bleiben erhalten.
+2. Primäre Buttons:
+   Weiß auf #c91850 statt Weiß auf #ff3b78: Kontrast 5,630:1.
+   Hover auf #ad1243: 7,132:1. Beide Farbpaarungen übersteigen 4,5:1.
+   Dies ist eine gezielte Kontrastprüfung, keine vollständige WCAG-Zertifizierung.
+3. Französische Startseitenüberschrift:
+   „Trouve un chemin plus simple.“ ersetzt die Aussage vom kürzesten Weg.
+4. RFD beginnt jetzt mit Addition auf Stufe 1, passend zur Einführung.
+   Gemischt und alle anderen Rechenarten bleiben verfügbar.
+5. Betreiberangaben:
+   Der übermittelte Kbis-Auszug vom 9. Oktober 2026 bestätigt SIREN
+   131 236 408 und RCS Chalon-sur-Saône. Diese Angaben ersetzen den bisherigen
+   Hinweis „SIRET en cours d’attribution“ in Footer und rechtlichen Hinweisen
+   in allen drei Sprachen. Eine SIRET-Nummer wurde nicht ergänzt, da der
+   Auszug dafür keine bestätigte Nummer enthält. Kontaktangaben bleiben erhalten.
+6. Inhalte ohne JavaScript:
+   Alle sechs Seiten enthalten ihre englischen Texte, Navigation und Footer
+   bereits im HTML. Die vier Übungsseiten enthalten auch die Lernbeispiele.
+   Die aufklappbaren Erklärungen funktionieren als native HTML-Details.
+   Ohne JavaScript werden die interaktiven Formulare und Sprachbuttons
+   ausgeblendet; ein dreisprachiger Hinweis erklärt die Voraussetzung.
+   Mit JavaScript bleiben EN, FR-CA und DE vollständig verfügbar.
+   Beim Initialisieren entsteht kein doppelter Booklet-Hinweis.
+7. Suchmaschinen und Teilen:
+   Eigene Beschreibungen, kanonische URLs, Open-Graph- und Twitter-Titel/
+   Beschreibungen für alle sechs Seiten, statisch auf Englisch vorhanden.
+   Ein separates Vorschaubild wurde nicht ergänzt. Die jeweilige Plattform
+   bestimmt die tatsächliche Darstellung einer geteilten URL.
+   sitemap.xml listet die sechs Seiten; robots.txt verweist auf die Sitemap.
+8. Neue Asset-Kennung 20261009-2 gegen veraltete Browsercaches.
 
-ERKLÄRUNGEN UND BENUTZERFÜHRUNG
-- Alle vier bestehenden Lernstufen bleiben erhalten: RFD, ×11, Soft, Full B11.
-- Alle bisherigen Rechenarten, Zufallsaufgaben, Stufen, Modi und Klammeroptionen
-  bleiben verfügbar. Full B11 behält seinen festen Bereich 3-stellig × 3-stellig.
-- Englisch, Französisch und Deutsch bleiben erhalten. Neue und geänderte
-  Lerntexte, Fehlerhinweise, Eingabehilfe und dynamisches Feedback sind übersetzt.
-- Vollständig gelöste Beispiele für jede RFD-Rechenart, ×11 mit Übertrag,
-  Soft und Full B11. Erläutert werden Ankerwahl, Rest, Codes, Rückumwandlung,
-  führende Nullen, X = 10, Leiter und sämtliche Zwischenrechnungen.
-- Beispiele: 48 + 29 = 77; 83 − 29 = 54; 7 × 28 = 196; 156 ÷ 6 = 26;
-  33 × 11 = 363; 47 × 28 = 1 316; 347 × 256 = 88 832;
-  200 × 120 mit Code 0XX = 24 000.
-- Klarer kostenloser Einstieg ohne Anmeldung; keine pauschale Schnelligkeitsbehauptung.
-- Dezenter Booklet-Hinweis mit ausschließlich folgendem Booklet-Ziel:
-  https://singershamrock.com/booklets.html
-  Keine Preise, Kaufbuttons, Warenkörbe, Pop-ups oder direkten Payhip-Links.
-- Keine externen Laufzeitbibliotheken, Konten, Analysefunktionen oder Backend-Dienste.
-  Die Testwerkzeuge im Ordner _qa sind optional und für den Websitebetrieb unnötig.
+BETROFFENE DATEIEN
+Geändert:
+  assets/app.js       – Beschriftungen für selbstständiges Rechnen
+  assets/common.js    – Französisch, Registerangaben, Booklet ohne Duplikat
+  assets/styles.css   – primäre Buttonfarben
+  index.html          – statische Inhalte, Metadaten, kanonische URL, Version
+  rfd.html            – zusätzlich Standardauswahl Addition
+  killer-move.html    – statische Inhalte, Metadaten, kanonische URL, Version
+  b11-soft.html       – statische Inhalte, Metadaten, kanonische URL, Version
+  b11.html            – statische Inhalte, Metadaten, kanonische URL, Version
+  legal.html          – zusätzlich bestätigte Registerangaben
+Neu: robots.txt, sitemap.xml.
+Unverändert enthalten: assets/engine.js, CNAME, .nojekyll.
+Zusätzlich aktualisiert/ergänzt: Berichte und Prüfprogramme in _qa/.
 
-EINGABEVERTRAG
-- Punkt oder Komma bedeutet immer Dezimaltrennung: 1,234 bedeutet 1.234,
-  niemals 1234. Gemischte Punkt-/Kommaschreibweisen werden zurückgewiesen.
-- Tausender können durch korrekt gruppierte einheitliche Leerzeichen (auch
-  geschützte/schmale Leerzeichen) oder Apostrophe getrennt werden: 1 234, 1’234.
-  Ungegliederte Ziffern wie 1234 sind ebenfalls zulässig.
-- Vorzeichen einschließlich typografischem Minus, führende Nullen und
-  wertgleiche Darstellungen wie 330.0, 330,0 oder 660/2 werden unterstützt.
-- Leere Eingaben sind nicht Null; Buchstaben, Exponentialnotation, mehrfach
-  gesetzte Trennzeichen und Division durch Null werden zurückgewiesen.
-- Maximal 80 Zeichen je ausgewertetem Zahlenwert und 12 Nachkommastellen je
-  Dezimalbestandteil. Ganzzahlantworten sind auf den sicheren Zahlenbereich
-  ±9 007 199 254 740 991 begrenzt. Diese Grenzen liegen weit über dem Übungsbedarf.
-- Codes haben genau zwei beziehungsweise drei Stellen. X bedeutet zehn.
+ERNEUT DURCHGEFÜHRTE PRÜFUNGEN
+Mathematik und Eingaben, Node.js mit unabhängiger Python-Fraction-Kontrolle:
+- 65 Ganzzahleingaben, 10 Bruch-/Dezimalfälle, 22 feste Rechenwege,
+  990 Code-Rundläufe und 14 ungültige Codeformate.
+- 4.500 RFD-, 3.000 Soft- und 1.000 Full-B11-Aufgaben: zusammen 8.500.
+- Zusätzlich 7.969 angebotene RFD-Alternativwege unabhängig geprüft.
+- Reproduzierbarer Zufallsstartwert: 20261009.
 
-TATSÄCHLICH DURCHGEFÜHRTE TESTS
-Es wurden sieben mathematische Aufgabenfamilien geprüft: RFD Addition,
-Subtraktion, Multiplikation und Division sowie ×11, Soft und Full B11.
-Daraus ergeben sich 30 vorhandene Bedienkonfigurationen:
-RFD 5 Operationsauswahlen einschließlich Gemischt × 3 Stufen = 15;
-×11 3 Stufen = 3; Soft 3 Stufen × 3 Modi = 9; Full B11 3 Modi = 3.
+Formulare und Übersetzungen, Happy DOM 20.14.6:
+- Alle 30 Bedienkonfigurationen in EN, FR und DE: 90 Durchläufe.
+- 371 Formularauswertungen: richtige, falsche und ungültige Eingaben.
+- 33 Sprachwechsel bei angezeigtem Feedback; 18 Seiten-/Sprachprüfungen.
+- 624 übersetzte Textelemente, 108 Formularbeschriftungen, 207 lokale Links
+  einschließlich Ankerzielen; 6 Prüfungen bei gesperrtem localStorage.
 
-Mathematik und Parser, Node.js; unabhängige Kontrolle mit Python Fraction:
-- 65 Fälle zur Ganzzahleingabe, einschließlich richtig/falsch/ungültig.
-- 10 Fälle zur exakten Bruch-/Dezimalauswertung.
-- 22 feste Rechenwegfälle: Klammern, Prioritäten, Null, negative Zahlen,
-  Brüche, Dezimalpunkt/-komma, Division durch Null und falsche Antworten.
-- 990 vollständige Code-Rundläufe: alle Soft-Faktoren 10–99 und alle
-  Full-Faktoren 100–999. Decodierung, Stellenzahl, Rest und Anker geprüft.
-- 14 ungültige Codeformate.
-- 4 500 RFD-Zufallsaufgaben (300 pro Operationsauswahl und Stufe).
-  Alle 7 969 dabei angebotenen Alternativwege unabhängig mit Fraction geprüft.
-- 3 000 Soft-Aufgaben, 1 000 je Stufe.
-- 1 000 Full-B11-Aufgaben.
-Die 8 500 erzeugten Aufgaben sind bereits in diesen Zeilen enthalten;
-Alternativwege sind zusätzliche Kontrollen derselben RFD-Aufgaben.
-Zufallsstichprobe reproduzierbar mit Startwert 20261009.
-
-Formular- und Übersetzungsintegration, Happy DOM 20.14.6:
-- 90 Konfigurationsdurchläufe: sämtliche 30 Konfigurationen in drei Sprachen.
-- 371 tatsächliche Formularauswertungen, einschließlich falscher und ungültiger
-  Einzelwerte an jedem B11-Kontrollpunkt sowie der ursprünglichen Zahlenfehler.
-- 33 Sprachwechselprüfungen bei bereits angezeigtem Feedback.
-- 18 Seiten-/Sprachprüfungen über alle sechs HTML-Seiten und drei Sprachen.
-- 624 überprüfte übersetzte Textelemente, 108 Formularbeschriftungen,
-  207 lokale Linkprüfungen einschließlich Ankerzielen.
-- 6 Prüfungen bei gesperrtem localStorage: Sprachwechsel bleibt funktionsfähig.
+Gezielte Nachprüfung der aktuellen Änderungen:
+- 18 Fälle für selbstständige Beschriftungen: Soft/Full, drei Sprachen,
+  jeweils leerer, korrekter und abweichender Code. Keine errechneten
+  Zwischenwerte; Modus- und Sprachwechsel bringen keine Lösungen zurück.
+  Die Hilfen im geführten Modus bleiben verfügbar.
+- 6 statisch befüllte Seiten; 18 Prüfungen nach JavaScript-Initialisierung
+  auf doppelte Navigation, Footer und Booklet-Hinweise.
+- RFD-Standard Addition/Stufe 1 in allen drei Sprachen.
+- Französische Überschrift, Registerangaben, Metadaten, Sitemap,
+  lokale Assets, Versionskennung und beide Button-Kontraste geprüft.
+- engine.js ist bytegleich mit dem zuletzt übermittelten ZIP.
 - CSS-Regelauswertung bei 320, 375, 390, 768, 900, 1050 und 1280 Pixeln:
-  Navigation bleibt laut berechnetem CSS sichtbar (display:flex).
-Keine fehlgeschlagenen Fälle in den abgeschlossenen Testläufen.
-Diese Zählungen beschreiben ausgeführte Prüfungen, keine empirische Erfolgsquote
-für alle möglichen Eingaben oder alle Geräte.
+  Die Navigation bleibt sichtbar. Dies ist keine echte Layoutprüfung.
 
-NICHT GETESTET / VERBLEIBENDE GRENZEN
-- Visuelle Darstellung und Interaktion in einem echten Desktop-/Mobilbrowser,
-  Touch-Tastatur, reale Geräte, Safari/Firefox und Screenreader: NICHT GETESTET.
-  Der lokale Chromium-Prozess wurde durch die Umgebung an der Socket-Erzeugung
-  gehindert. Der Cloud-Browser verweigerte lokale Datei-URLs. Diese Sperren
-  wurden nicht umgangen. DOM-Simulation und CSS-Regelauswertung ersetzen
-  weder Screenshots noch eine echte Layoutprüfung; es wird kein entsprechender
-  Browsererfolg behauptet.
-- Die externe Booklet-Zielseite lieferte am 9.10.2026 HTTP 404. Der Link ist
-  korrekt umgesetzt; die separat zu erstellende Zielseite muss vor öffentlicher
-  Freigabe verfügbar sein. Sie ist nicht Bestandteil des übermittelten Projekts.
-- Kein Live-Deployment vorgenommen. DNS, GitHub-Pages-Einstellungen und das
-  Verhalten nach dem Upload sind nicht Teil der lokal abgeschlossenen Tests.
-- Bestehende Betreiber-/Kontaktdaten und der Status „SIRET en cours d’attribution“
-  wurden übernommen; ihre sachliche Aktualität wurde nicht eigenständig verifiziert.
-- RFD erkennt exakte Gleichwertigkeit, nicht die gedankliche Einfachheit eines
-  Rechenwegs. Die Aufgabenbereiche bleiben wie im Original vorwiegend positiv
-  und ganzzahlig. Größere Stufen vergrößern den Zahlenbereich.
-- Keine Zielgruppenbefragung: bessere Verständlichkeit und Motivation sind
-  gestalterische/pädagogische Einschätzungen, keine gemessene Beliebtheit.
+AUDITGRENZEN UND BEKANNTE ABHÄNGIGKEITEN
+Happy DOM simuliert Dokumente und Interaktionen, rendert aber keine
+Browserbilder. Die sichtbare Darstellung der neuen Fassung, Touchbedienung,
+Safari/Firefox, reale Smartphones und Screenreader sind damit nicht geprüft.
+Nach dem Upload ist deshalb ein erneuter Live-Test der neuen Version nötig.
 
-GITHUB PAGES – KONKRETE PRÜFUNG
-Offizielle Quellen, abgerufen am 9.10.2026:
-https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
-https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#pages
-https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#10-advertising-on-github
+Der Booklet-Link https://singershamrock.com/booklets.html bleibt bewusst
+bestehen. Die noch zu erstellenden Booklets und der Umbau von Singer Shamrock
+sind bekannte, separat geplante Arbeiten und kein neu entdeckter Paketfehler.
+Kostenloses Training und der dezente Booklet-Hinweis bleiben wie vereinbart.
+Keine Zahlungsabwicklung, Preise oder direkten Shop-Links wurden ergänzt.
+Die vertiefenden Booklet-Ideen bleiben im Dokument B11Booklet.
+SpookMyLook gehört nicht zu diesem Archiv und wurde nicht verändert.
 
-Die Pages-Regeln untersagen insbesondere Websites, deren Hauptzweck die
-Förderung kommerzieller Transaktionen oder kommerzielle SaaS-Angebote sind.
-Die Acceptable Use Policies verlangen außerdem, dass Werbung/Marketing nicht
-zum primären Inhalt wird. Ein indirekter Shop-Link ist kein Freibrief.
+Keine externen Laufzeitbibliotheken oder neuen Datenübertragungen ergänzt.
+Die Sprachpräferenz bleibt lokal gespeichert, sofern der Browser dies erlaubt.
+RFD prüft exakte Gleichwertigkeit, nicht die gedankliche Einfachheit eines Wegs.
+Die bisherigen Regeln für Zahlen, Brüche, Dezimalzeichen und Codes bleiben
+bestehen und wurden erneut geprüft. Eine Zielgruppenbefragung erfolgte nicht.
 
-Bewertung der gelieferten Umsetzung: Das kostenlose, ohne Anmeldung nutzbare
-Lernangebot bleibt der Hauptinhalt. Der kurze themenbezogene Booklet-Hinweis
-ist untergeordnet und enthält weder Verkaufsvorgang noch Preis oder Kaufbutton.
-Das spricht für Vereinbarkeit mit diesen Regeln, sofern Lernangebot und tatsächliche
-Nutzung diesen Schwerpunkt behalten. Dies ist eine begründete Einschätzung,
-keine verbindliche Freigabe durch GitHub. Eine spätere Umwandlung in einen
-Verkaufstrichter oder ein überwiegend werbliches Angebot wäre neu zu bewerten.
-
-ÖFFENTLICHE FREIGABE
-Upload des statischen Pakets ist möglich. Eine vorbehaltlose Werbefreigabe
-für den 19. oder 26. Oktober 2026 wird hier nicht erteilt: Zuerst die Booklet-
-Zielseite bereitstellen und einen echten Desktop-/Mobiltest der hochgeladenen
-Version durchführen. Die mathematischen und DOM-basierten Abnahmetests
-sind abgeschlossen; die genannten externen und visuellen Punkte bleiben offen.
+Prüfprogramme und Ergebnisprotokolle: _qa/.
+Upload-Anleitung: BEFORE-PUBLISHING.txt.

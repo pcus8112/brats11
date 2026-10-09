@@ -1,78 +1,103 @@
 <!doctype html>
-<html lang="en-US">
-<head>
+<html lang="en-US"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Train Recursive Friendly Decomposition with random addition, subtraction, multiplication, and division problems.">
+  <meta name="description" content="Practise Recursive Friendly Decomposition for free. Start with addition, then explore simpler routes for subtraction, multiplication and division.">
+  <link rel="canonical" href="https://brats11.com/rfd.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BRATS 11">
+  <meta property="og:title" content="RFD Training — BRATS 11">
+  <meta property="og:description" content="Practise Recursive Friendly Decomposition for free. Start with addition, then explore simpler routes for subtraction, multiplication and division.">
+  <meta property="og:url" content="https://brats11.com/rfd.html">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RFD Training — BRATS 11">
+  <meta name="twitter:description" content="Practise Recursive Friendly Decomposition for free. Start with addition, then explore simpler routes for subtraction, multiplication and division.">
   <meta name="theme-color" content="#031329">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307080d'/%3E%3Cpath d='M10 18h44v7H10zm0 21h44v7H10z' fill='%23ff3b78'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='900' fill='%23ffd447'%3EB11%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20261009-1">
+  <link rel="stylesheet" href="assets/styles.css?v=20261009-2">
   <title>RFD Training — BRATS 11</title>
-  <script src="assets/common.js?v=20261009-1" defer></script>
-  <script src="assets/engine.js?v=20261009-1" defer></script>
-  <script src="assets/app.js?v=20261009-1" defer></script>
+  <script src="assets/common.js?v=20261009-2" defer=""></script>
+  <script src="assets/engine.js?v=20261009-2" defer=""></script>
+  <script src="assets/app.js?v=20261009-2" defer=""></script>
+  <noscript><style>.language-switcher, .trainer-card, .learning-actions { display: none !important; }</style></noscript>
 </head>
 <body data-page="rfd">
-  <header id="site-header"></header>
-  <noscript><p class="site-shell">Enable JavaScript to use the exercises. / Activez JavaScript pour utiliser les exercices. / Aktiviere JavaScript für die Übungen.</p></noscript>
-  <main class="site-shell page-main" id="main">
+  <header id="site-header"><div class="site-header"><div class="site-shell header-inner">
+      <a class="brand-link" href="index.html" aria-label="BRATS 11">
+        <span class="brand-mark">B11</span><span class="brand-copy"><strong>BRATS 11</strong><small data-i18n="brand.method">Home of the B11 Method</small></span>
+      </a>
+      <nav class="main-nav" data-i18n-aria="common.navLabel" aria-label="Main navigation"><a href="index.html" data-i18n="nav.home">Home</a><a href="rfd.html" aria-current="page" data-i18n="nav.rfd">RFD</a><a href="killer-move.html" data-i18n="nav.killer">×11</a><a href="b11-soft.html" data-i18n="nav.soft">B11 Soft</a><a href="b11.html" data-i18n="nav.full">Full B11</a></nav>
+      <div class="language-switcher" data-i18n-aria="common.languageLabel" aria-label="Language">
+        <button class="language-button is-active" type="button" data-language="en" data-lang-label="lang.en" aria-pressed="true" aria-label="English (USA)" title="English (USA)"><span aria-hidden="true">🇺🇸</span><small>EN</small></button>
+        <button class="language-button" type="button" data-language="fr" data-lang-label="lang.fr" aria-pressed="false" aria-label="French (Canada)" title="French (Canada)"><span aria-hidden="true">🇨🇦</span><small>FR</small></button>
+        <button class="language-button" type="button" data-language="de" data-lang-label="lang.de" aria-pressed="false" aria-label="German" title="German"><span aria-hidden="true">🇩🇪</span><small>DE</small></button>
+      </div>
+    </div></div></header>
+  <noscript><p class="site-shell">You can read the examples in English below. Enable JavaScript for exercises and language selection. / Les exemples en anglais restent accessibles. Activez JavaScript pour les exercices et le choix de langue. / Die englischen Beispiele bleiben lesbar. Aktiviere JavaScript für Übungen und Sprachwahl.</p></noscript>
+  <main class="site-shell page-main" id="main"><p class="booklet-note"><a href="https://singershamrock.com/booklets.html" data-i18n="booklet">Need more explanation? Explore our learning booklets at Singer Shamrock.</a></p>
     <div class="page-intro">
-      <div><p class="eyebrow" data-i18n="rfd.eyebrow"></p><h1 data-i18n="rfd.title"></h1></div>
-      <p data-i18n="rfd.intro"></p>
+      <div><p class="eyebrow" data-i18n="rfd.eyebrow">Foundation · Recursive Friendly Decomposition</p><h1 data-i18n="rfd.title">Make it friendly.</h1></div>
+      <p data-i18n="rfd.intro">Rebuild the given problem as an easier but equivalent route. Three number fields are available for your shortcut; the fourth field is for the result.</p>
     </div>
-    <p class="learning-actions"><a href="#rfd-form" data-i18n="learn.try"></a></p>
-    <section class="learning-guide" id="learning-guide"></section>
-    <form class="trainer-card" id="rfd-form" novalidate>
+    <p class="learning-actions"><a href="#rfd-form" data-i18n="learn.try">Go to the exercises</a></p>
+    <section class="learning-guide" id="learning-guide"><p>RFD means Recursive Friendly Decomposition: rewrite a calculation using easier numbers without changing its value. You can simplify a difficult step again. Start with addition at level 1; then try the other operations. Higher levels use larger numbers.</p><details><summary>How it works — explained step by step</summary><section><h3>Addition: compensate for rounding</h3><ol><li>48 + 29: replace 29 with 30. That adds 1 too much, so subtract 1.</li><li>48 + 30 − 1 = 78 − 1 = 77. Enter 48, +, 30, −, 1; result 77.</li></ol></section><section><h3>Subtraction: reverse the correction</h3><ol><li>83 − 29: subtract 30 instead. You have subtracted 1 too much, so add 1 back.</li><li>83 − 30 + 1 = 53 + 1 = 54.</li></ol></section><section><h3>Multiplication: distribute the factor</h3><ol><li>7 × 28 = 7 × (30 − 2). Multiply both parts by 7.</li><li>30 × 7 − 14 = 210 − 14 = 196. Do not subtract just 2.</li></ol></section><section><h3>Division: split the dividend</h3><ol><li>156 ÷ 6 = (120 + 36) ÷ 6. Divide both parts by 6.</li><li>120 ÷ 6 + 6 = 20 + 6 = 26. The last 6 comes from 36 ÷ 6.</li></ol></section><p class="note">With no parentheses, × and ÷ come before + and −; equal-priority operations run left to right. Example: (48 + 12) ÷ 6 = 10, but 48 + 12 ÷ 6 = 50. Select the matching grouping. Any exactly equivalent route is accepted; the checker does not measure how easy it is.</p></details></section>
+    <form class="trainer-card" id="rfd-form" novalidate="">
       <div class="control-bar">
         <div class="control-group">
-          <label for="rfd-level" data-i18n="common.level"></label>
+          <label for="rfd-level" data-i18n="common.level">Difficulty</label>
           <select id="rfd-level">
-            <option value="1" data-i18n="rfd.level1"></option>
-            <option value="2" data-i18n="rfd.level2"></option>
-            <option value="3" data-i18n="rfd.level3"></option>
+            <option value="1" data-i18n="rfd.level1">2-digit problems</option>
+            <option value="2" data-i18n="rfd.level2">3-digit problems</option>
+            <option value="3" data-i18n="rfd.level3">4-digit problems</option>
           </select>
         </div>
         <div class="control-group">
-          <label for="rfd-operation" data-i18n="common.operation"></label>
+          <label for="rfd-operation" data-i18n="common.operation">Operation</label>
           <select id="rfd-operation">
-            <option value="mixed" data-i18n="common.mixed"></option>
-            <option value="add" data-i18n="common.addition"></option>
-            <option value="sub" data-i18n="common.subtraction"></option>
-            <option value="mul" data-i18n="common.multiplication"></option>
-            <option value="div" data-i18n="common.division"></option>
+            <option value="mixed" data-i18n="common.mixed">Mixed</option>
+            <option value="add" data-i18n="common.addition" selected="">Addition</option>
+            <option value="sub" data-i18n="common.subtraction">Subtraction</option>
+            <option value="mul" data-i18n="common.multiplication">Multiplication</option>
+            <option value="div" data-i18n="common.division">Division</option>
           </select>
         </div>
       </div>
       <div class="trainer-content">
         <div class="problem-head">
-          <div><p class="problem-label" data-i18n="common.task"></p><p class="problem" id="problem" aria-live="polite"></p></div>
+          <div><p class="problem-label" data-i18n="common.task">Problem</p><p class="problem" id="problem" aria-live="polite"></p></div>
         </div>
         <section class="section">
-          <div class="section-heading"><h2 data-i18n="rfd.routeTitle"></h2><p data-i18n="rfd.routeHint"></p></div>
+          <div class="section-heading"><h2 data-i18n="rfd.routeTitle">Your shortcut</h2><p data-i18n="rfd.routeHint">The third number is optional. Choose a grouping when needed.</p></div>
           <div class="route-builder">
-            <div class="field"><label for="route-a" data-i18n="rfd.number1"></label><input id="route-a" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
-            <select id="route-op-1" data-i18n-aria="common.operator1"><option value="+">+</option><option value="-">−</option><option value="*">×</option><option value="/">÷</option></select>
-            <div class="field"><label for="route-b" data-i18n="rfd.number2"></label><input id="route-b" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
-            <select id="route-op-2" data-i18n-aria="common.operator2"><option value="+">+</option><option value="-">−</option><option value="*">×</option><option value="/">÷</option></select>
-            <div class="field"><label for="route-c" data-i18n="rfd.number3"></label><input id="route-c" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
+            <div class="field"><label for="route-a" data-i18n="rfd.number1">Number 1</label><input id="route-a" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
+            <select id="route-op-1" data-i18n-aria="common.operator1" aria-label="First operator"><option value="+">+</option><option value="-">−</option><option value="*">×</option><option value="/">÷</option></select>
+            <div class="field"><label for="route-b" data-i18n="rfd.number2">Number 2</label><input id="route-b" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
+            <select id="route-op-2" data-i18n-aria="common.operator2" aria-label="Second operator"><option value="+">+</option><option value="-">−</option><option value="*">×</option><option value="/">÷</option></select>
+            <div class="field"><label for="route-c" data-i18n="rfd.number3">Number 3 (optional)</label><input id="route-c" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
             <div class="route-symbol" aria-hidden="true">=</div>
-            <div class="field"><label for="route-result" data-i18n="common.result"></label><input id="route-result" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
+            <div class="field"><label for="route-result" data-i18n="common.result">Result</label><input id="route-result" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help"></div>
           </div>
           <div class="route-options">
             <div class="field">
-              <label for="route-grouping" data-i18n="rfd.structure"></label>
-              <select id="route-grouping"><option value="normal" data-i18n="rfd.structureNormal"></option><option value="left" data-i18n="rfd.structureLeft"></option><option value="right" data-i18n="rfd.structureRight"></option></select>
+              <label for="route-grouping" data-i18n="rfd.structure">Grouping</label>
+              <select id="route-grouping"><option value="normal" data-i18n="rfd.structureNormal">Standard order of operations</option><option value="left" data-i18n="rfd.structureLeft">(A ○ B) ○ C</option><option value="right" data-i18n="rfd.structureRight">A ○ (B ○ C)</option></select>
             </div>
             <p class="route-preview" id="route-preview" aria-live="polite"></p>
           </div>
         </section>
-        <p class="input-help" id="input-help" data-i18n="common.inputHelp"></p>
-        <div class="actions"><button class="button button-primary" type="submit" data-i18n="common.check"></button><button class="button button-secondary" id="new-problem" type="button" data-i18n="common.new"></button></div>
+        <p class="input-help" id="input-help" data-i18n="common.inputHelp">Numbers: . or , is a decimal separator, never a thousands separator. For thousands use 1 234 or 1’234, or write 1234. Fractions such as 6/2 are allowed. Answers must have the exact requested value; no rounding.</p>
+        <div class="actions"><button class="button button-primary" type="submit" data-i18n="common.check">Check</button><button class="button button-secondary" id="new-problem" type="button" data-i18n="common.new">New problem</button></div>
         <div class="result" id="result" role="status" aria-live="polite"></div>
       </div>
     </form>
-    <p class="next-stage"><a href="killer-move.html"><span data-i18n="learn.next"></span> →</a></p>
+    <p class="next-stage"><a href="killer-move.html"><span data-i18n="learn.next">Next stage</span> →</a></p>
   </main>
-  <footer id="site-footer"></footer>
-</body>
-</html>
+  <footer id="site-footer"><div class="site-footer"><div class="site-shell footer-inner">
+      <a class="sse-signet" href="https://singershamrock.com" target="_blank" rel="noopener noreferrer"><strong data-i18n="brand.sse">Singer Shamrock Enterprises</strong><span data-i18n="brand.est">A brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026</span></a>
+      <div class="footer-links"><span data-i18n="footer.marketing">Operated by Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIREN 131 236 408 · RCS Chalon-sur-Saône</span><a href="legal.html#imprint" data-i18n="footer.imprint">Legal notice</a><a href="legal.html#privacy" data-i18n="footer.privacy">Privacy</a><a href="legal.html#terms" data-i18n="footer.terms">Terms</a></div>
+    </div></div></footer>
+
+
+
+</body></html>

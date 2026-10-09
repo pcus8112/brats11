@@ -1,21 +1,25 @@
 BRATS11 – UPLOAD-ANLEITUNG
-9. Oktober 2026
+9. Oktober 2026 · Asset-Version 20261009-2
 
 1. BRATS11_FINAL.zip entpacken.
 2. Den INHALT in das bestehende GitHub-Pages-Veröffentlichungsverzeichnis
    hochladen/übernehmen. index.html und assets/ müssen auf derselben Ebene
-   liegen, nicht in einem zusätzlichen Ordner BRATS11_FINAL.
-3. Vorhandene gleichnamige Dateien durch die enthaltenen Fassungen ersetzen.
-   CNAME (ohne .txt) enthält brats11.com. Ein altes CNAME.txt ist nicht erforderlich.
-   .nojekyll ebenfalls übernehmen; manche Dateimanager blenden diese Datei aus.
-4. Bestehende GitHub-Pages-/Domain-Einstellungen beibehalten. Für eine reine
-   statische Branch-Veröffentlichung ist kein Build-Schritt erforderlich.
-5. Nach Abschluss des Deployments die Seite neu laden und alle vier Lernstufen
-   in Englisch, Französisch und Deutsch öffnen. Desktop und Smartphone prüfen.
-6. Vor öffentlicher Werbung muss https://singershamrock.com/booklets.html
-   funktionieren. Am 9.10.2026 lieferte die separat geplante Zielseite noch 404.
+   liegen, nicht in einem zusätzlichen Unterordner.
+3. Vorhandene gleichnamige Dateien ersetzen. Die neuen Dateien robots.txt
+   und sitemap.xml ebenfalls übernehmen. CNAME enthält brats11.com.
+   .nojekyll ebenfalls übernehmen; manche Dateimanager blenden sie aus.
+4. Bestehende GitHub-Pages-/Domain-Einstellungen beibehalten. Für die statische
+   Branch-Veröffentlichung ist kein Build-Schritt und kein npm erforderlich.
+5. Nach dem Deployment neu laden. Die Asset-Links im Seitenquelltext müssen
+   zur Versionskontrolle ?v=20261009-2 enthalten.
+6. Anschließend die neue Version live prüfen: alle vier Lernstufen und drei
+   Sprachen, Desktop/Smartphone, Modus „Alles selbst“ und Navigation.
+   Die bereits bestandenen lokalen Tests stehen in BERICHT.txt.
 
-BERICHT.txt enthält Änderungen, belegte Tests und verbleibende Einschränkungen.
-_qa enthält reproduzierbare Tests und Ergebnisprotokolle. Dieser Ordner wird
-von der Website nicht geladen und ist für ihren Betrieb nicht erforderlich.
-Es gibt keine notwendigen npm-Pakete, keinen Server und keine Zahlungsfunktionen.
+Die noch ausstehende Booklet-Zielseite bei Singer Shamrock ist eine bekannte,
+separat geplante Arbeit. Ihr Link wurde wie vereinbart beibehalten.
+SpookMyLook wird mit seinem eigenen aktuellen Paket separat bearbeitet.
+
+_qa/ enthält optionale Prüfprogramme und Protokolle. Dieser Ordner sowie
+Textberichte sind für den Websitebetrieb nicht erforderlich. Sie können
+mitgeführt oder beim Website-Upload weggelassen werden.
