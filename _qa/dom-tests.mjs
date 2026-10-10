@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 const root=path.resolve('.');
-const report={environment:'Happy DOM 20.14.6 (DOM simulation, no visual browser rendering)',configurationRuns:0,distinctConfigurations:30,answerSubmissions:0,languageFeedbackChecks:0,pageLanguageChecks:0,translatedElements:0,localLinks:0,formLabels:0,storageBlocked:0,failures:[]};
+const report={environment:'Happy DOM 20.14.6 (DOM simulation, no visual browser rendering)',configurationRuns:0,distinctConfigurations:31,answerSubmissions:0,languageFeedbackChecks:0,pageLanguageChecks:0,translatedElements:0,localLinks:0,formLabels:0,storageBlocked:0,failures:[]};
 let w,d;
 const $=s=>d.querySelector(s);
 async function load(file,lang='en',storageBlocked=false){
@@ -11,7 +11,7 @@ async function load(file,lang='en',storageBlocked=false){
  w=new Window({url:`https://brats11.test/${file}?lang=${lang}`,settings:{disableJavaScriptFileLoading:true,disableCSSFileLoading:true,enableJavaScriptEvaluation:true,suppressInsecureJavaScriptEnvironmentWarning:true}});
  d=w.document;d.write(fs.readFileSync(path.join(root,file),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,''));await w.happyDOM.whenAsyncComplete();
  if(storageBlocked)Object.defineProperty(w,'localStorage',{get(){throw new Error('Storage blocked');}});
- for(const script of ['common.js','engine.js','app.js'])w.eval(fs.readFileSync(path.join(root,'assets',script),'utf8'));
+ for(const script of ['engine.js','common.js','app.js'])w.eval(fs.readFileSync(path.join(root,'assets',script),'utf8'));
  assert.equal($('.main-nav').children.length,5);
 }
 function fill(id,value){const el=$('#'+id);el.value=String(value);el.dispatchEvent(new w.Event('input',{bubbles:true}));}
@@ -35,8 +35,8 @@ try{
    fill('route-c','');fill('route-b',b+1);submit(false,'wrong route');report.configurationRuns++;
   }
   await load('killer-move.html',lang);
-  for(const level of ['1','2','3']){
-   select('killer-level',level);const [n]=numbers();fill('killer-tenfold',n*10);fill('killer-final',n*11);submit(true,'killer '+level);fill('killer-final',n*11+1);submit(false,'killer wrong');report.configurationRuns++;
+  for(const level of ['1','2','3','4']){
+   select('killer-level',level);const [n]=numbers(),digits=String(n).split('').map(Number);digits.slice(1).forEach((digit,i)=>fill('killer-pair-'+i,digits[i]+digit));fill('killer-final',n*11);submit(true,'killer '+level);fill('killer-final',n*11+1);submit(false,'killer wrong');report.configurationRuns++;
   }
   for(const [file,len,levels] of [['b11-soft.html',2,['1','2','3']],['b11.html',3,[null]]]){
    await load(file,lang);
@@ -52,7 +52,7 @@ try{
   }
  }
  await load('killer-move.html');w.B11Engine.randomInt=()=>33;$('#new-problem').click();
- for(const [a,b,good] of [['330','363',true],['3,30','3.63',false],['3.30','3,63',false],['330,0','363.0',true],['0330','+0363',true],['660/2','726/2',true],['-330','-363',false],['0','0',false],['','',false],['330x','363!',false],['330','363.000000000001',false],['3 30','3 63',false]]){fill('killer-tenfold',a);fill('killer-final',b);submit(good,'input regression '+a);}
+ for(const [a,b,good] of [['6','363',true],['0,06','3.63',false],['0.06','3,63',false],['6,0','363.0',true],['06','+0363',true],['12/2','726/2',true],['-6','-363',false],['0','0',false],['','',false],['6x','363!',false],['6','363.000000000001',false],['0 06','3 63',false]]){fill('killer-pair-0',a);fill('killer-final',b);submit(good,'input regression '+a);}
  for(const [lang,text] of [['fr','Vérifie les champs indiqués.'],['de','Prüfe die markierten Felder.'],['en','Review the marked fields.']]){$(`[data-language="${lang}"]`).click();assert.ok($('#result').textContent.includes(text));assert.equal($('#killer-final').value,'3 63');report.languageFeedbackChecks++;}
  await load('rfd.html');w.B11Engine.rfdTask=()=>({a:33,b:11,type:'mul',result:363,alternatives:[{numbers:[330,33],operators:['+'],grouping:'normal',result:363}]});$('#new-problem').click();
  for(const [a,b,c,op1,op2,g,good] of [['330','33','', '+','+','normal',true],['-363','-1','', '*','+','normal',true],['726/2','0','', '+','+','normal',true],['36.3','10','', '*','+','normal',true],['36,3','10','', '*','+','normal',true],['300','33','30', '+','+','normal',true],['330','33','1', '+','*','left',true],['33','10','1','*','+','right',true],['363.000000000001','0','', '+','+','normal',false],['363','0','', '/','+','normal',false],['33','11','0','*','/','normal',false]]){

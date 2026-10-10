@@ -1,0 +1,10 @@
+{
+  "method": "BigInt arithmetic oracle and Happy DOM integration; no visual browser rendering",
+  "arithmeticCases": 12501,
+  "fixedTraces": 4,
+  "trainerCases": 123,
+  "languagePreservation": 81,
+  "staticDiagrams": 108,
+  "invalidValues": 6,
+  "failures": []
+}

@@ -10,7 +10,7 @@ async function load(file, lang='en', scripts=true) {
   w = new Window({url:`https://brats11.com/${file}?lang=${lang}`, settings:{disableJavaScriptFileLoading:true,disableCSSFileLoading:true,enableJavaScriptEvaluation:true,suppressInsecureJavaScriptEnvironmentWarning:true}});
   w.document.write(fs.readFileSync(file,'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,''));
   await w.happyDOM.whenAsyncComplete();
-  if (scripts) for (const f of ['common.js','engine.js','app.js']) w.eval(fs.readFileSync('assets/'+f,'utf8'));
+  if (scripts) for (const f of ['engine.js','common.js','app.js']) w.eval(fs.readFileSync('assets/'+f,'utf8'));
 }
 const $ = selector => w.document.querySelector(selector);
 const type = (id,value) => { const input=$('#'+id); input.value=value; input.dispatchEvent(new w.Event('input',{bubbles:true})); };
@@ -41,8 +41,8 @@ try {
     for (const node of doc.querySelectorAll('link[href^="assets/"]')) assert.ok(fs.existsSync(node.getAttribute('href').split('?')[0]));
     const source=fs.readFileSync(file,'utf8');
     assert.ok(source.includes('.language-switcher, .trainer-card, .learning-actions { display: none !important; }'));
-    assert.ok(!source.includes('20261009-1'));
-    for (const match of source.matchAll(/src="(assets\/[^?]+)\?v=20261009-2"/g)) assert.ok(fs.existsSync(match[1]));
+    assert.ok(!source.includes('20261009-2'));
+    for (const match of source.matchAll(/src="(assets\/[^?]+)\?v=20261009-3"/g)) assert.ok(fs.existsSync(match[1]));
     report.staticPages++;
     for (const lang of ['en','fr','de']) {
       await load(file,lang);

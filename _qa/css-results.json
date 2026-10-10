@@ -4,37 +4,51 @@
     {
       "width": 320,
       "navigation": "flex",
-      "grid": "minmax(0,1fr) auto"
+      "grid": "minmax(0,1fr) auto",
+      "footer": "1fr",
+      "killerInputBackground": "#0b0c11"
     },
     {
       "width": 375,
       "navigation": "flex",
-      "grid": "minmax(0,1fr) auto"
+      "grid": "minmax(0,1fr) auto",
+      "footer": "1fr",
+      "killerInputBackground": "#0b0c11"
     },
     {
       "width": 390,
       "navigation": "flex",
-      "grid": "minmax(0,1fr) auto"
+      "grid": "minmax(0,1fr) auto",
+      "footer": "1fr",
+      "killerInputBackground": "#0b0c11"
     },
     {
       "width": 768,
       "navigation": "flex",
-      "grid": "minmax(0,1fr) auto"
+      "grid": "minmax(0,1fr) auto",
+      "footer": "minmax(240px, .8fr) minmax(0, 1.6fr)",
+      "killerInputBackground": "#0b0c11"
     },
     {
       "width": 900,
       "navigation": "flex",
-      "grid": "minmax(0,1fr) auto"
+      "grid": "minmax(0,1fr) auto",
+      "footer": "minmax(240px, .8fr) minmax(0, 1.6fr)",
+      "killerInputBackground": "#0b0c11"
     },
     {
       "width": 1050,
       "navigation": "flex",
-      "grid": "minmax(0,1fr) auto"
+      "grid": "minmax(0,1fr) auto",
+      "footer": "minmax(240px, .8fr) minmax(0, 1.6fr)",
+      "killerInputBackground": "#0b0c11"
     },
     {
       "width": 1280,
       "navigation": "flex",
-      "grid": "auto 1fr auto"
+      "grid": "auto 1fr auto",
+      "footer": "minmax(240px, .8fr) minmax(0, 1.6fr)",
+      "killerInputBackground": "#0b0c11"
     }
   ]
 }
