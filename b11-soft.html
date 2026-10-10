@@ -15,11 +15,11 @@
   <meta name="twitter:description" content="Learn two-digit multiplication with B11 Soft. Follow worked examples, create base-11 codes and practise each calculation step for free.">
   <meta name="theme-color" content="#031329">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307080d'/%3E%3Cpath d='M10 18h44v7H10zm0 21h44v7H10z' fill='%23ff3b78'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='900' fill='%23ffd447'%3EB11%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20261009-2">
+  <link rel="stylesheet" href="assets/styles.css?v=20261009-3">
   <title>B11 Soft — BRATS 11</title>
-  <script src="assets/common.js?v=20261009-2" defer=""></script>
-  <script src="assets/engine.js?v=20261009-2" defer=""></script>
-  <script src="assets/app.js?v=20261009-2" defer=""></script>
+  <script src="assets/engine.js?v=20261009-3" defer=""></script>
+  <script src="assets/common.js?v=20261009-3" defer=""></script>
+  <script src="assets/app.js?v=20261009-3" defer=""></script>
   <noscript><style>.language-switcher, .trainer-card, .learning-actions { display: none !important; }</style></noscript>
 </head>
 <body data-page="soft">
@@ -41,7 +41,7 @@
       <p data-i18n="soft.intro">A two-digit factor is coded as 11a + b. One starting product, one Killer Move, and one added product lead to the answer.</p>
     </div>
     <p class="learning-actions"><a href="#b11-form" data-i18n="learn.try">Go to the exercises</a></p>
-    <section class="learning-guide" id="learning-guide"><p>Keep the larger factor as the base. Encode the two-digit smaller factor as 11a + b, where b is from 0 to 10. The anchor is the largest multiple of 11 not exceeding that factor. Its quotient gives a; its remainder gives b. Each code symbol is a base-eleven digit; X means ten, not multiplication.</p><details><summary>How it works — explained step by step</summary><section><h3>Example: 47 × 28 — build code 26</h3><ol><li>The smaller factor is 28. The anchor is 22 = 2 × 11, because the next multiple, 33, is too large.</li><li>Remainder: 28 − 22 = 6. So a = 2, b = 6, and the code is 26. Decode it: 2 × 11 + 6 = 28; it does not mean decimal 26.</li></ol></section><section><h3>Apply the code — one ×11 step</h3><ol><li>Start: 47 × 2 = 94.</li><li>Multiply the start by 11: 94 × 11 = 940 + 94 = 1 034.</li><li>Extra product: 47 × 6 = 282.</li><li>Add: 1 034 + 282 = 1 316. This equals 47 × (2 × 11 + 6) = 47 × 28.</li></ol></section><section><h3>Zero and X</h3><ol><li>10 = 0 × 11 + 10 → code 0X. Keep the zero. 21 = 1 × 11 + 10 → code 1X.</li><li>For 47 × 21: start 47; ×11 gives 517; add 47 × 10 = 470; total 987.</li></ol></section><p class="note">Use “Apply code” to learn the ladder with a supplied code; “Build code” to practise anchor, remainder and code; “Do everything” combines both. In the ladder, add base × b, not just b. The three levels keep this rule and increase the size of the base.</p></details></section>
+    <section class="learning-guide" id="learning-guide"><p>Keep the larger factor as the base. Encode the two-digit smaller factor as 11a + b, where b is from 0 to 10. The anchor is the largest multiple of 11 not exceeding that factor. Its quotient gives a; its remainder gives b. Each code symbol is a base-eleven digit; X means ten, not multiplication. For every ×11 step, use the Killer Move: neighbour sums, then carries. Practise this digit trick on the ×11 page.</p><details><summary>How it works — explained step by step</summary><section><h3>Example: 47 × 28 — build code 26</h3><ol><li>The smaller factor is 28. The anchor is 22 = 2 × 11, because the next multiple, 33, is too large.</li><li>Remainder: 28 − 22 = 6. So a = 2, b = 6, and the code is 26. Decode it: 2 × 11 + 6 = 28; it does not mean decimal 26.</li></ol></section><section><h3>Apply the code — one ×11 step</h3><ol><li>Start: 47 × 2 = 94.</li><li>Multiply the start by 11: 94 × 11 = 940 + 94 = 1 034.</li><li>Extra product: 47 × 6 = 282.</li><li>Add: 1 034 + 282 = 1 316. This equals 47 × (2 × 11 + 6) = 47 × 28.</li></ol></section><section><h3>Zero and X</h3><ol><li>10 = 0 × 11 + 10 → code 0X. Keep the zero. 21 = 1 × 11 + 10 → code 1X.</li><li>For 47 × 21: start 47; ×11 gives 517; add 47 × 10 = 470; total 987.</li></ol></section><p class="note">Use “Apply code” to learn the ladder with a supplied code; “Build code” to practise anchor, remainder and code; “Do everything” combines both. In the ladder, add base × b, not just b. The three levels keep this rule and increase the size of the base.</p></details></section>
     <form class="trainer-card" id="b11-form" novalidate="">
       <div class="control-bar">
         <div class="control-group">
@@ -87,7 +87,4 @@
       <a class="sse-signet" href="https://singershamrock.com" target="_blank" rel="noopener noreferrer"><strong data-i18n="brand.sse">Singer Shamrock Enterprises</strong><span data-i18n="brand.est">A brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026</span></a>
       <div class="footer-links"><span data-i18n="footer.marketing">Operated by Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIREN 131 236 408 · RCS Chalon-sur-Saône</span><a href="legal.html#imprint" data-i18n="footer.imprint">Legal notice</a><a href="legal.html#privacy" data-i18n="footer.privacy">Privacy</a><a href="legal.html#terms" data-i18n="footer.terms">Terms</a></div>
     </div></div></footer>
-
-
-
 </body></html>

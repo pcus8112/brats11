@@ -1,112 +1,106 @@
-BRATS11 – ÄNDERUNGS- UND TESTBERICHT
-9. Oktober 2026 · Asset-Version 20261009-2
-Grundlage: zuletzt übermitteltes BRATS11_FINAL.zip mit 24 Dateien.
+BRATS11 – KILLER-MOVE-KORREKTUR UND TESTBERICHT
+9. Oktober 2026 · Asset-Version 20261009-3
+Grundlage: zuletzt übermitteltes BRATS11_FINAL-1.zip (29 Dateien).
 
-ERGEBNIS
-Die besprochenen Korrekturen sind im vollständigen Upload-Paket umgesetzt.
-Alle ausgeführten automatisierten Prüfungen sind erfolgreich. Dieses Paket
-wurde noch nicht auf brats11.com veröffentlicht. Der frühere Live-Audit
-beschreibt die vorherige Fassung, nicht diese neue Version.
+UMGESETZT
+Der Killer Move erklärt und trainiert jetzt die Nachbarziffern-Methode:
+1. Erste und letzte Ziffer bilden zunächst die Randstellen.
+2. Benachbarte Ziffern werden paarweise addiert. Jede Summe gehört zu EINER
+   Dezimalstelle und darf vor der Übertragsverarbeitung zwei Ziffern haben.
+3. Überträge werden von rechts nach links verarbeitet, einschließlich
+   Übertragsketten und einer möglichen zusätzlichen Ziffer ganz links.
 
-UMGESETZTE AUDITPUNKTE
-1. „Alles selbst“ bei B11 Soft und Full B11:
-   Die Feldbeschriftungen nennen Rechenschritte ohne errechnete Zwischenwerte.
-   Start und Zusatzprodukte verwenden die selbst eingegebenen Codeziffern.
-   Im Modus „Code anwenden“ bleiben die rechnerischen Hilfen verfügbar.
-   Die Antwortprüfung und Rückmeldung nach dem Prüfen bleiben erhalten.
-2. Primäre Buttons:
-   Weiß auf #c91850 statt Weiß auf #ff3b78: Kontrast 5,630:1.
-   Hover auf #ad1243: 7,132:1. Beide Farbpaarungen übersteigen 4,5:1.
-   Dies ist eine gezielte Kontrastprüfung, keine vollständige WCAG-Zertifizierung.
-3. Französische Startseitenüberschrift:
-   „Trouve un chemin plus simple.“ ersetzt die Aussage vom kürzesten Weg.
-4. RFD beginnt jetzt mit Addition auf Stufe 1, passend zur Einführung.
-   Gemischt und alle anderen Rechenarten bleiben verfügbar.
-5. Betreiberangaben:
-   Der übermittelte Kbis-Auszug vom 9. Oktober 2026 bestätigt SIREN
-   131 236 408 und RCS Chalon-sur-Saône. Diese Angaben ersetzen den bisherigen
-   Hinweis „SIRET en cours d’attribution“ in Footer und rechtlichen Hinweisen
-   in allen drei Sprachen. Eine SIRET-Nummer wurde nicht ergänzt, da der
-   Auszug dafür keine bestätigte Nummer enthält. Kontaktangaben bleiben erhalten.
-6. Inhalte ohne JavaScript:
-   Alle sechs Seiten enthalten ihre englischen Texte, Navigation und Footer
-   bereits im HTML. Die vier Übungsseiten enthalten auch die Lernbeispiele.
-   Die aufklappbaren Erklärungen funktionieren als native HTML-Details.
-   Ohne JavaScript werden die interaktiven Formulare und Sprachbuttons
-   ausgeblendet; ein dreisprachiger Hinweis erklärt die Voraussetzung.
-   Mit JavaScript bleiben EN, FR-CA und DE vollständig verfügbar.
-   Beim Initialisieren entsteht kein doppelter Booklet-Hinweis.
-7. Suchmaschinen und Teilen:
-   Eigene Beschreibungen, kanonische URLs, Open-Graph- und Twitter-Titel/
-   Beschreibungen für alle sechs Seiten, statisch auf Englisch vorhanden.
-   Ein separates Vorschaubild wurde nicht ergänzt. Die jeweilige Plattform
-   bestimmt die tatsächliche Darstellung einer geteilten URL.
-   sitemap.xml listet die sechs Seiten; robots.txt verweist auf die Sitemap.
-8. Neue Asset-Kennung 20261009-2 gegen veraltete Browsercaches.
+Vier vollständig erklärte Beispiele in EN, FR-CA und DE:
+- 121 × 11 = 1331: ohne Übertrag.
+- 78 × 11 = 858: eine Nachbarsumme von 15.
+- 123456 × 11 = 1358016: 11 erzeugt einen Übertrag; aus 9 wird 10,
+  der nächste Übertrag macht aus 7 eine 8.
+- 99 × 11 = 1089: zusätzliche Ergebnisziffer vorne.
+Die Diagramme zeigen Stellenkästchen, ankommende +1-Überträge und das Ergebnis.
+Stellen bleiben untereinander ausgerichtet, auch bei einer neuen ersten Ziffer.
+Die Erklärung ist auch ohne JavaScript im englischen HTML enthalten.
 
-BETROFFENE DATEIEN
-Geändert:
-  assets/app.js       – Beschriftungen für selbstständiges Rechnen
-  assets/common.js    – Französisch, Registerangaben, Booklet ohne Duplikat
-  assets/styles.css   – primäre Buttonfarben
-  index.html          – statische Inhalte, Metadaten, kanonische URL, Version
-  rfd.html            – zusätzlich Standardauswahl Addition
-  killer-move.html    – statische Inhalte, Metadaten, kanonische URL, Version
-  b11-soft.html       – statische Inhalte, Metadaten, kanonische URL, Version
-  b11.html            – statische Inhalte, Metadaten, kanonische URL, Version
-  legal.html          – zusätzlich bestätigte Registerangaben
-Neu: robots.txt, sitemap.xml.
-Unverändert enthalten: assets/engine.js, CNAME, .nojekyll.
-Zusätzlich aktualisiert/ergänzt: Berichte und Prüfprogramme in _qa/.
+TRAINER
+Die alten Eingabefelder für den zehnfachen Wert und die anschließende Addition
+wurden ersetzt. Für jede Nachbarpaarung gibt es ein eigenes Summenfeld;
+danach wird das Ergebnis nach allen Überträgen eingetragen.
+Die vollständige Nachbarsumme wird geprüft: Aus 15 darf im ersten Schritt
+nicht schon 5 werden. Korrekturen zeigen das erwartete Feldresultat.
+Nach dem Prüfen zeigt die Rückmeldung den Ziffernweg und eine aufklappbare
+Liste aller Übertragsschritte. Vor dem Prüfen werden keine Lösungen eingesetzt.
 
-ERNEUT DURCHGEFÜHRTE PRÜFUNGEN
-Mathematik und Eingaben, Node.js mit unabhängiger Python-Fraction-Kontrolle:
-- 65 Ganzzahleingaben, 10 Bruch-/Dezimalfälle, 22 feste Rechenwege,
-  990 Code-Rundläufe und 14 ungültige Codeformate.
-- 4.500 RFD-, 3.000 Soft- und 1.000 Full-B11-Aufgaben: zusammen 8.500.
-- Zusätzlich 7.969 angebotene RFD-Alternativwege unabhängig geprüft.
-- Reproduzierbarer Zufallsstartwert: 20261009.
+Die bisherigen Stufen mit zwei, drei und vier Ziffern bleiben verfügbar.
+Eine zusätzliche Stufe mit fünf bis sechs Ziffern erlaubt längere Übertragsketten.
+Es gibt damit 31 Bedienkonfigurationen insgesamt: RFD 15, Killer Move 4,
+B11 Soft 9 und Full B11 3.
+Die eigenständige Nachbarziffern-Logik steht in assets/engine.js; Endergebnisse
+werden außerdem mit der gewöhnlichen Multiplikation kontrolliert.
+B11 Soft und Full B11 verweisen in ihren Einführungen auf den Zifferntrick.
 
-Formulare und Übersetzungen, Happy DOM 20.14.6:
-- Alle 30 Bedienkonfigurationen in EN, FR und DE: 90 Durchläufe.
-- 371 Formularauswertungen: richtige, falsche und ungültige Eingaben.
-- 33 Sprachwechsel bei angezeigtem Feedback; 18 Seiten-/Sprachprüfungen.
-- 624 übersetzte Textelemente, 108 Formularbeschriftungen, 207 lokale Links
-  einschließlich Ankerzielen; 6 Prüfungen bei gesperrtem localStorage.
+ÜBRIGE AUDITKORREKTUREN
+- Footer: Die Markenspalte erhält auf breiteren Ansichten mindestens 240 Pixel.
+  Betreiberangaben dürfen in der zweiten Spalte umbrechen; auf kleinen Ansichten
+  stehen beide Bereiche untereinander.
+- Französische Startüberschrift: kleinere, sprachabhängige Schriftgröße.
+- Die Abschnittsnavigation der rechtlichen Seite hat nun eine übersetzte
+  Screenreader-Beschriftung in allen drei Sprachen.
+- Alle HTML-Seiten wurden statisch neu erzeugt und auf Asset-Version
+  20261009-3 umgestellt. Bei den Trainingsseiten lädt die gemeinsame
+  Rechenlogik vor den Erklärungsdiagrammen.
 
-Gezielte Nachprüfung der aktuellen Änderungen:
-- 18 Fälle für selbstständige Beschriftungen: Soft/Full, drei Sprachen,
-  jeweils leerer, korrekter und abweichender Code. Keine errechneten
-  Zwischenwerte; Modus- und Sprachwechsel bringen keine Lösungen zurück.
-  Die Hilfen im geführten Modus bleiben verfügbar.
-- 6 statisch befüllte Seiten; 18 Prüfungen nach JavaScript-Initialisierung
-  auf doppelte Navigation, Footer und Booklet-Hinweise.
-- RFD-Standard Addition/Stufe 1 in allen drei Sprachen.
-- Französische Überschrift, Registerangaben, Metadaten, Sitemap,
-  lokale Assets, Versionskennung und beide Button-Kontraste geprüft.
-- engine.js ist bytegleich mit dem zuletzt übermittelten ZIP.
-- CSS-Regelauswertung bei 320, 375, 390, 768, 900, 1050 und 1280 Pixeln:
-  Die Navigation bleibt sichtbar. Dies ist keine echte Layoutprüfung.
+BETROFFENE WEBSITE-DATEIEN
+  assets/engine.js, assets/app.js, assets/common.js, assets/styles.css
+  index.html, rfd.html, killer-move.html, b11-soft.html, b11.html, legal.html
+Die vollständigen übrigen Website-Dateien bleiben im Archiv enthalten:
+  CNAME, .nojekyll, robots.txt, sitemap.xml
+Prüfprogramme, Protokolle und Berichte sind ebenfalls enthalten.
 
-AUDITGRENZEN UND BEKANNTE ABHÄNGIGKEITEN
-Happy DOM simuliert Dokumente und Interaktionen, rendert aber keine
-Browserbilder. Die sichtbare Darstellung der neuen Fassung, Touchbedienung,
-Safari/Firefox, reale Smartphones und Screenreader sind damit nicht geprüft.
-Nach dem Upload ist deshalb ein erneuter Live-Test der neuen Version nötig.
+AUSGEFÜHRTE PRÜFUNGEN
+1. Neue Killer-Move-Logik:
+   12.501 arithmetische Fälle gegen unabhängige BigInt-Multiplikation geprüft:
+   alle Werte 0–9999, 2.500 reproduzierbare längere Zahlen und die obere
+   unterstützte Grenze. Auch die mit Dezimalstellen gewichteten Rohsummen
+   müssen dasselbe Produkt ergeben. Vier feste Übertragsabläufe wurden
+   ausdrücklich geprüft; sechs ungültige Funktionsargumente zurückgewiesen.
+2. Neuer Trainer, Happy DOM:
+   123 Formularprüfungen für neun ausgewählte Zahlen in drei Sprachen,
+   darunter korrekte Summen, abgeschnittene zweistellige Summen, falsche
+   Endergebnisse, ungültige Eingaben und Rücksetzen auf eine neue Aufgabe.
+   81 Sprachwechsel prüfen den Erhalt von Antworten und Erfolgsstatus.
+   Die vier Beispieldiagramme und ihre Spaltenausrichtung wurden in diesen
+   27 Seitenläufen geprüft (108 Diagrammprüfungen).
+3. Bestehende Mathematik und Zahleneingaben erneut geprüft:
+   65 Ganzzahleingaben, 10 Bruch-/Dezimalfälle, 22 Rechenwege,
+   990 Code-Rundläufe und 14 ungültige Codeformate.
+   4.500 RFD-, 3.000 Soft- und 1.000 Full-B11-Aufgaben, zusätzlich
+   7.969 angebotene RFD-Alternativwege mit unabhängiger Python-Fraction-Prüfung.
+4. Gesamte Bedienung, Happy DOM:
+   93 Konfigurationsläufe (31 × drei Sprachen), 377 Formularauswertungen,
+   33 Sprachwechsel bei angezeigtem Feedback, 18 Seiten-/Sprachprüfungen,
+   645 übersetzte Textelemente, 108 Formularbeschriftungen, 207 lokale Links,
+   sechs Prüfungen bei gesperrtem localStorage.
+   Zusammen mit Punkt 2 sind dies 500 ausgeführte Formularprüfungen.
+5. Frühere Korrekturen:
+   18 Selbstmodusfälle, sechs statisch befüllte Seiten, 18 Prüfungen auf
+   doppelte Inhalte nach Initialisierung, RFD-Einstieg in drei Sprachen,
+   Metadaten, Sitemap, Dateiversionen und primäre Buttonkontraste geprüft.
+6. CSS-Regelauswertung:
+   Navigation, Footer-Spalten und Gestaltung der neuen Eingabefelder bei
+   320, 375, 390, 768, 900, 1050 und 1280 Pixeln geprüft.
 
-Der Booklet-Link https://singershamrock.com/booklets.html bleibt bewusst
-bestehen. Die noch zu erstellenden Booklets und der Umbau von Singer Shamrock
-sind bekannte, separat geplante Arbeiten und kein neu entdeckter Paketfehler.
-Kostenloses Training und der dezente Booklet-Hinweis bleiben wie vereinbart.
-Keine Zahlungsabwicklung, Preise oder direkten Shop-Links wurden ergänzt.
-Die vertiefenden Booklet-Ideen bleiben im Dokument B11Booklet.
-SpookMyLook gehört nicht zu diesem Archiv und wurde nicht verändert.
+Alle abgeschlossenen Tests sind ohne fehlgeschlagene Fälle beendet.
+Die Testprogramme und Ergebnisprotokolle stehen in _qa/.
 
-Keine externen Laufzeitbibliotheken oder neuen Datenübertragungen ergänzt.
-Die Sprachpräferenz bleibt lokal gespeichert, sofern der Browser dies erlaubt.
-RFD prüft exakte Gleichwertigkeit, nicht die gedankliche Einfachheit eines Wegs.
-Die bisherigen Regeln für Zahlen, Brüche, Dezimalzeichen und Codes bleiben
-bestehen und wurden erneut geprüft. Eine Zielgruppenbefragung erfolgte nicht.
+GRENZEN UND BEIBEHALTENE VORGABEN
+Happy DOM ist eine DOM-/CSS-Simulation und kein visueller Browser.
+Insbesondere rendert es CSS-Funktionen wie clamp() nicht wie ein echter Browser.
+Die neue visuelle Darstellung, reale Smartphone-Bedienung und Safari sind
+noch nach dem Upload zu prüfen. Der vorherige Live-Audit gilt für Version -2,
+nicht als Browserprüfung dieser neuen Version -3.
 
-Prüfprogramme und Ergebnisprotokolle: _qa/.
-Upload-Anleitung: BEFORE-PUBLISHING.txt.
+Das kostenlose Training und der dezente Link zu
+https://singershamrock.com/booklets.html bleiben erhalten. Die noch geplanten
+Booklets und der Umbau der Zielseite sind bekannte externe Arbeiten.
+Keine Zahlungsfunktionen, Preise oder direkten Shop-Verweise wurden ergänzt.
+Betreiber-/Registerangaben, Domains und sonstige Lernstufen bleiben erhalten.
+SpookMyLook wurde nicht verändert. Es erfolgte kein Live-Deployment.

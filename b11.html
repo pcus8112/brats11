@@ -15,11 +15,11 @@
   <meta name="twitter:description" content="Learn three-digit multiplication with Full B11. Create base-11 codes and practise the complete calculation ladder for free.">
   <meta name="theme-color" content="#031329">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307080d'/%3E%3Cpath d='M10 18h44v7H10zm0 21h44v7H10z' fill='%23ff3b78'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='900' fill='%23ffd447'%3EB11%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20261009-2">
+  <link rel="stylesheet" href="assets/styles.css?v=20261009-3">
   <title>Full B11 — BRATS 11</title>
-  <script src="assets/common.js?v=20261009-2" defer=""></script>
-  <script src="assets/engine.js?v=20261009-2" defer=""></script>
-  <script src="assets/app.js?v=20261009-2" defer=""></script>
+  <script src="assets/engine.js?v=20261009-3" defer=""></script>
+  <script src="assets/common.js?v=20261009-3" defer=""></script>
+  <script src="assets/app.js?v=20261009-3" defer=""></script>
   <noscript><style>.language-switcher, .trainer-card, .learning-actions { display: none !important; }</style></noscript>
 </head>
 <body data-page="full">
@@ -41,7 +41,7 @@
       <p data-i18n="full.intro">Code the smaller factor as 121a + 11b + c. Then execute the start, two Killer Moves, and two controlled additions.</p>
     </div>
     <p class="learning-actions"><a href="#b11-form" data-i18n="learn.try">Go to the exercises</a></p>
-    <section class="learning-guide" id="learning-guide"><p>Full B11 multiplies two three-digit numbers. Keep the larger one as the base and encode the smaller as 121a + 11b + c. Since 121 = 11 × 11, this is also (11a + b) × 11 + c. This explains the two ×11 steps of the ladder.</p><details><summary>How it works — explained step by step</summary><section><h3>Example: 347 × 256 — build code 213</h3><ol><li>The largest multiple of 121 not exceeding 256 is 242 = 2 × 121. Enter anchor 242; remainder 256 − 242 = 14.</li><li>Now split the remainder: 14 = 1 × 11 + 3. Thus a = 2, b = 1, c = 3; code 213.</li><li>Decode: 2 × 121 + 1 × 11 + 3 = 242 + 11 + 3 = 256. The remainder field is 14, not the final digit 3.</li></ol></section><section><h3>Apply the code — the complete ladder</h3><ol><li>Start: 347 × 2 = 694.</li><li>First ×11: 694 × 11 = 6 940 + 694 = 7 634.</li><li>First extra product: 347 × 1 = 347. First total: 7 634 + 347 = 7 981.</li><li>Second ×11: 7 981 × 11 = 79 810 + 7 981 = 87 791.</li><li>Second extra product: 347 × 3 = 1 041. Final total: 87 791 + 1 041 = 88 832.</li><li>Check independently: 347 × (250 + 6) = 86 750 + 2 082 = 88 832.</li></ol></section><section><h3>Leading zero and X</h3><ol><li>100 = 0 × 121 + 9 × 11 + 1 → 091. 120 = 0 × 121 + 10 × 11 + 10 → 0XX.</li><li>For 200 × 120: start 0; ×11 gives 0; add 2 000; ×11 gives 22 000; add 2 000; result 24 000.</li></ol></section><p class="note">First practise “Apply code”, then “Build code”, then “Do everything”. The fixed exercise range is three digits × three digits. Every step uses the same base. X is the digit value 10. Always keep all three code positions.</p></details></section>
+    <section class="learning-guide" id="learning-guide"><p>Full B11 multiplies two three-digit numbers. Keep the larger one as the base and encode the smaller as 121a + 11b + c. Since 121 = 11 × 11, this is also (11a + b) × 11 + c. This explains the two ×11 steps of the ladder. For every ×11 step, use the Killer Move: neighbour sums, then carries. Practise this digit trick on the ×11 page.</p><details><summary>How it works — explained step by step</summary><section><h3>Example: 347 × 256 — build code 213</h3><ol><li>The largest multiple of 121 not exceeding 256 is 242 = 2 × 121. Enter anchor 242; remainder 256 − 242 = 14.</li><li>Now split the remainder: 14 = 1 × 11 + 3. Thus a = 2, b = 1, c = 3; code 213.</li><li>Decode: 2 × 121 + 1 × 11 + 3 = 242 + 11 + 3 = 256. The remainder field is 14, not the final digit 3.</li></ol></section><section><h3>Apply the code — the complete ladder</h3><ol><li>Start: 347 × 2 = 694.</li><li>First ×11: 694 × 11 = 6 940 + 694 = 7 634.</li><li>First extra product: 347 × 1 = 347. First total: 7 634 + 347 = 7 981.</li><li>Second ×11: 7 981 × 11 = 79 810 + 7 981 = 87 791.</li><li>Second extra product: 347 × 3 = 1 041. Final total: 87 791 + 1 041 = 88 832.</li><li>Check independently: 347 × (250 + 6) = 86 750 + 2 082 = 88 832.</li></ol></section><section><h3>Leading zero and X</h3><ol><li>100 = 0 × 121 + 9 × 11 + 1 → 091. 120 = 0 × 121 + 10 × 11 + 10 → 0XX.</li><li>For 200 × 120: start 0; ×11 gives 0; add 2 000; ×11 gives 22 000; add 2 000; result 24 000.</li></ol></section><p class="note">First practise “Apply code”, then “Build code”, then “Do everything”. The fixed exercise range is three digits × three digits. Every step uses the same base. X is the digit value 10. Always keep all three code positions.</p></details></section>
     <form class="trainer-card" id="b11-form" novalidate="">
       <fieldset class="mode-tabs" data-i18n-aria="common.mode" aria-label="Training mode">
         <div class="mode-option"><input type="radio" name="mode" id="mode-apply" value="apply" checked=""><label for="mode-apply" data-i18n="common.modeApply">Apply code</label></div>
@@ -87,7 +87,4 @@
       <a class="sse-signet" href="https://singershamrock.com" target="_blank" rel="noopener noreferrer"><strong data-i18n="brand.sse">Singer Shamrock Enterprises</strong><span data-i18n="brand.est">A brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026</span></a>
       <div class="footer-links"><span data-i18n="footer.marketing">Operated by Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIREN 131 236 408 · RCS Chalon-sur-Saône</span><a href="legal.html#imprint" data-i18n="footer.imprint">Legal notice</a><a href="legal.html#privacy" data-i18n="footer.privacy">Privacy</a><a href="legal.html#terms" data-i18n="footer.terms">Terms</a></div>
     </div></div></footer>
-
-
-
 </body></html>

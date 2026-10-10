@@ -2,24 +2,24 @@
 <html lang="en-US"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Practise multiplying by 11 for free. Learn the Killer Move with a worked example and interactive exercises at three levels.">
+  <meta name="description" content="Multiply by 11 using neighbouring digit sums and carries. Learn the Killer Move with visual examples and free interactive exercises.">
   <link rel="canonical" href="https://brats11.com/killer-move.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BRATS 11">
   <meta property="og:title" content="Killer Move ×11 — BRATS 11">
-  <meta property="og:description" content="Practise multiplying by 11 for free. Learn the Killer Move with a worked example and interactive exercises at three levels.">
+  <meta property="og:description" content="Multiply by 11 using neighbouring digit sums and carries. Learn the Killer Move with visual examples and free interactive exercises.">
   <meta property="og:url" content="https://brats11.com/killer-move.html">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Killer Move ×11 — BRATS 11">
-  <meta name="twitter:description" content="Practise multiplying by 11 for free. Learn the Killer Move with a worked example and interactive exercises at three levels.">
+  <meta name="twitter:description" content="Multiply by 11 using neighbouring digit sums and carries. Learn the Killer Move with visual examples and free interactive exercises.">
   <meta name="theme-color" content="#031329">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307080d'/%3E%3Cpath d='M10 18h44v7H10zm0 21h44v7H10z' fill='%23ff3b78'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='900' fill='%23ffd447'%3EB11%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/styles.css?v=20261009-2">
+  <link rel="stylesheet" href="assets/styles.css?v=20261009-3">
   <title>Killer Move ×11 — BRATS 11</title>
-  <script src="assets/common.js?v=20261009-2" defer=""></script>
-  <script src="assets/engine.js?v=20261009-2" defer=""></script>
-  <script src="assets/app.js?v=20261009-2" defer=""></script>
+  <script src="assets/engine.js?v=20261009-3" defer=""></script>
+  <script src="assets/common.js?v=20261009-3" defer=""></script>
+  <script src="assets/app.js?v=20261009-3" defer=""></script>
   <noscript><style>.language-switcher, .trainer-card, .learning-actions { display: none !important; }</style></noscript>
 </head>
 <body data-page="killer">
@@ -38,25 +38,28 @@
   <main class="site-shell page-main" id="main"><p class="booklet-note"><a href="https://singershamrock.com/booklets.html" data-i18n="booklet">Need more explanation? Explore our learning booklets at Singer Shamrock.</a></p>
     <div class="page-intro">
       <div><p class="eyebrow" data-i18n="killer.eyebrow">Tool · Eleven Move</p><h1 data-i18n="killer.title">Killer Move ×11</h1></div>
-      <p data-i18n="killer.intro">Every complete B11 calculation advances its running total with ×11. First master the fixed identity 11x = 10x + x.</p>
+      <p data-i18n="killer.intro">Multiply by 11 using neighbouring digits. Keep the outside digits, add each neighbouring pair, then resolve carries from right to left.</p>
     </div>
     <p class="learning-actions"><a href="#killer-form" data-i18n="learn.try">Go to the exercises</a></p>
-    <section class="learning-guide" id="learning-guide"><p>The “Killer Move” is simply multiplication by 11: eleven copies are ten copies plus one more. This identity is the repeated step in B11.</p><details><summary>How it works — explained step by step</summary><section><h3>33 × 11</h3><ol><li>First: 33 × 10 = 330. Enter 330 in the first field.</li><li>Then: 330 + 33 = 363. Enter 363 in the final field.</li></ol></section><section><h3>Carry example: 78 × 11</h3><ol><li>78 × 10 = 780. Then 780 + 78 = 858. Carry as usual when adding; do not just insert 15 between 7 and 8.</li></ol></section><p class="note">Start with two digits, then move to three and four digits when comfortable. The rule also holds for 0 and negative numbers: 0 × 11 = 0; −3 × 11 = −30 − 3 = −33. The random trainer uses positive whole numbers.</p></details></section>
+    <section class="learning-guide" id="learning-guide"><p>The Killer Move builds the answer from digits: first digit → sums of neighbouring pairs → last digit. These are place values, not a string to join blindly. If a place reaches 10, resolve the carry to its left. Practise until you can see the sums and carries mentally.</p><details><summary>How it works — explained step by step</summary><section><h3>No carry: 121 × 11</h3><figure class="km-diagram" style="--km-diagram-columns: 4;"><figcaption>121 × 11 = 1331</figcaption><p class="km-diagram-label">Neighbour sums and outside digits — one box per place</p><div class="km-diagram-row"><span class="km-diagram-cell"><small class="km-incoming"></small><strong>1</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>3</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>3</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>1</strong></span></div><p class="km-diagram-label">After resolving carries from right to left</p><div class="km-diagram-row km-resolved"><span class="km-diagram-cell">1</span><span class="km-diagram-cell">3</span><span class="km-diagram-cell">3</span><span class="km-diagram-cell">1</span></div></figure><ol><li>Start with 1. The neighbouring pairs give 1 + 2 = 3 and 2 + 1 = 3. Finish with the last digit, 1.</li><li>The places are 1, 3, 3, 1. No carry is needed: the answer is 1331.</li></ol></section><section><h3>One carry: 78 × 11</h3><figure class="km-diagram" style="--km-diagram-columns: 3;"><figcaption>78 × 11 = 858</figcaption><p class="km-diagram-label">Neighbour sums and outside digits — one box per place</p><div class="km-diagram-row"><span class="km-diagram-cell"><small class="km-incoming">+1</small><strong>7</strong></span><span class="km-diagram-cell km-has-carry"><small class="km-incoming"></small><strong>15</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>8</strong></span></div><p class="km-diagram-label">After resolving carries from right to left</p><div class="km-diagram-row km-resolved"><span class="km-diagram-cell">8</span><span class="km-diagram-cell">5</span><span class="km-diagram-cell">8</span></div><p class="note">A small +1 above a box is a carry arriving from the right. Highlighted boxes pass a carry to the left.</p></figure><ol><li>The first digit, neighbour sum and last digit are 7, 15, 8. The 15 belongs to one place; do not join them into 7158.</li><li>Keep the 8 on the right. From 15, write 5 and carry 1 left: 7 + 1 = 8. Answer: 858.</li></ol></section><section><h3>A carry chain: 123456 × 11</h3><figure class="km-diagram" style="--km-diagram-columns: 7;"><figcaption>123456 × 11 = 1358016</figcaption><p class="km-diagram-label">Neighbour sums and outside digits — one box per place</p><div class="km-diagram-row"><span class="km-diagram-cell"><small class="km-incoming"></small><strong>1</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>3</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>5</strong></span><span class="km-diagram-cell"><small class="km-incoming">+1</small><strong>7</strong></span><span class="km-diagram-cell km-has-carry"><small class="km-incoming">+1</small><strong>9</strong></span><span class="km-diagram-cell km-has-carry"><small class="km-incoming"></small><strong>11</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>6</strong></span></div><p class="km-diagram-label">After resolving carries from right to left</p><div class="km-diagram-row km-resolved"><span class="km-diagram-cell">1</span><span class="km-diagram-cell">3</span><span class="km-diagram-cell">5</span><span class="km-diagram-cell">8</span><span class="km-diagram-cell">0</span><span class="km-diagram-cell">1</span><span class="km-diagram-cell">6</span></div><p class="note">A small +1 above a box is a carry arriving from the right. Highlighted boxes pass a carry to the left.</p></figure><ol><li>The pairs give 3, 5, 7, 9, 11. With the outside digits, the places are 1, 3, 5, 7, 9, 11, 6.</li><li>Keep the final 6. From 11, write 1 and carry 1 to the 9.</li><li>9 + 1 = 10: write 0 and carry 1 again. The 7 becomes 8.</li><li>The remaining places stay 1, 3, 5. Read the completed answer from the left: 1358016.</li></ol></section><section><h3>An extra digit at the front: 99 × 11</h3><figure class="km-diagram" style="--km-diagram-columns: 4;"><figcaption>99 × 11 = 1089</figcaption><p class="km-diagram-label">Neighbour sums and outside digits — one box per place</p><div class="km-diagram-row"><span class="km-diagram-cell km-placeholder" aria-hidden="true"></span><span class="km-diagram-cell km-has-carry"><small class="km-incoming">+1</small><strong>9</strong></span><span class="km-diagram-cell km-has-carry"><small class="km-incoming"></small><strong>18</strong></span><span class="km-diagram-cell"><small class="km-incoming"></small><strong>9</strong></span></div><p class="km-diagram-label">After resolving carries from right to left</p><div class="km-diagram-row km-resolved"><span class="km-diagram-cell">1</span><span class="km-diagram-cell">0</span><span class="km-diagram-cell">8</span><span class="km-diagram-cell">9</span></div><p class="note">A small +1 above a box is a carry arriving from the right. Highlighted boxes pass a carry to the left.</p></figure><ol><li>The places are 9, 18, 9. Keep the last 9; from 18, write 8 and carry 1 left.</li><li>The first 9 becomes 10. Write 0 in its place and put the remaining 1 in a new place at the front: 1089.</li></ol></section><p class="note">Build the neighbour sums from left to right, then resolve carries from right to left. A sum of 9 can become 10 when a carry arrives. Start with two digits; longer examples follow the same rule. The trainer uses positive whole numbers. Why it works: multiplying by 11 adds the number to a copy shifted one place left; the digit trick performs that addition locally.</p></details></section>
     <form class="trainer-card" id="killer-form" novalidate="">
       <div class="control-bar">
         <div class="control-group">
           <label for="killer-level" data-i18n="common.level">Difficulty</label>
-          <select id="killer-level"><option value="1" data-i18n="killer.level1">2-digit numbers</option><option value="2" data-i18n="killer.level2">3-digit numbers</option><option value="3" data-i18n="killer.level3">4-digit numbers</option></select>
+          <select id="killer-level"><option value="1" data-i18n="killer.level1">2-digit numbers</option><option value="2" data-i18n="killer.level2">3-digit numbers</option><option value="3" data-i18n="killer.level3">4-digit numbers</option><option value="4" data-i18n="killer.level4">5–6-digit numbers</option></select>
         </div>
       </div>
       <div class="trainer-content">
-        <div class="problem-head"><div><p class="problem-label" data-i18n="common.task">Problem</p><p class="problem" id="problem" aria-live="polite"></p></div><div class="task-badge"><small data-i18n="killer.rule">Killer Move</small><strong>10x + x</strong></div></div>
+        <div class="problem-head"><div><p class="problem-label" data-i18n="common.task">Problem</p><p class="problem" id="problem" aria-live="polite"></p></div><div class="task-badge"><small data-i18n="killer.rule">Neighbour-digit trick</small><strong>×11</strong></div></div>
         <section class="section">
-          <div class="fields two">
-            <div class="field"><label id="killer-tenfold-label" for="killer-tenfold"></label><input id="killer-tenfold" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help killer-tenfold-feedback"><p class="feedback" id="killer-tenfold-feedback"></p></div>
-            <div class="field"><label id="killer-final-label" for="killer-final"></label><input id="killer-final" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help killer-final-feedback"><p class="feedback" id="killer-final-feedback"></p></div>
-          </div>
-          <p class="note" data-i18n="killer.ruleText">For whole numbers, multiply by 10 by appending a zero, then add the original number once. Example: 33 × 11 = 330 + 33 = 363.</p>
+          <div class="section-heading"><h2 data-i18n="killer.pairsTitle">1. Add neighbouring digits</h2></div>
+          <p id="killer-pairs-help" data-i18n="killer.pairsHelp">Fill each middle box with the full sum of the pair above it (0–18). The first and last digits are supplied. Keep 11 as 11 at this stage; handle carries in the final answer.</p>
+          <div class="km-input-grid" id="killer-pairs" role="group" data-i18n-aria="killer.pairsTitle" aria-label="1. Add neighbouring digits"></div>
+        </section>
+        <section class="section">
+          <div class="section-heading"><h2 data-i18n="killer.resultTitle">2. Resolve carries and write the result</h2></div>
+          <p class="note" data-i18n="killer.ruleText">Each box is one decimal place. For a total of 10 or more, keep the units digit and carry 1 to the box on the left. Include any incoming carry: it can trigger another carry. The first digit can change, and an extra leading digit can appear.</p>
+          <div class="field km-final-field"><label id="killer-final-label" for="killer-final" data-i18n="killer.finalLabel">Result after all carries</label><input id="killer-final" type="text" inputmode="text" autocomplete="off" aria-describedby="input-help killer-final-feedback"><p class="feedback" id="killer-final-feedback"></p></div>
         </section>
         <p class="input-help" id="input-help" data-i18n="common.inputHelp">Numbers: . or , is a decimal separator, never a thousands separator. For thousands use 1 234 or 1’234, or write 1234. Fractions such as 6/2 are allowed. Answers must have the exact requested value; no rounding.</p>
         <div class="actions"><button class="button button-primary" type="submit" data-i18n="common.check">Check</button><button class="button button-secondary" id="new-problem" type="button" data-i18n="common.new">New problem</button></div>
@@ -69,7 +72,4 @@
       <a class="sse-signet" href="https://singershamrock.com" target="_blank" rel="noopener noreferrer"><strong data-i18n="brand.sse">Singer Shamrock Enterprises</strong><span data-i18n="brand.est">A brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · EST. 2026</span></a>
       <div class="footer-links"><span data-i18n="footer.marketing">Operated by Pierre Christian Ulrich Singer, Entrepreneur individuel (EI) · SIREN 131 236 408 · RCS Chalon-sur-Saône</span><a href="legal.html#imprint" data-i18n="footer.imprint">Legal notice</a><a href="legal.html#privacy" data-i18n="footer.privacy">Privacy</a><a href="legal.html#terms" data-i18n="footer.terms">Terms</a></div>
     </div></div></footer>
-
-
-
 </body></html>

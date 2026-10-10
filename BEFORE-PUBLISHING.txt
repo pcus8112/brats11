@@ -1,7 +1,7 @@
 BRATS11 – UPLOAD-ANLEITUNG
-9. Oktober 2026 · Asset-Version 20261009-2
+9. Oktober 2026 · Asset-Version 20261009-3
 
-1. BRATS11_FINAL.zip entpacken.
+1. BRATS11_KILLERMOVE.zip entpacken.
 2. Den INHALT in das bestehende GitHub-Pages-Veröffentlichungsverzeichnis
    hochladen/übernehmen. index.html und assets/ müssen auf derselben Ebene
    liegen, nicht in einem zusätzlichen Unterordner.
@@ -11,8 +11,9 @@ BRATS11 – UPLOAD-ANLEITUNG
 4. Bestehende GitHub-Pages-/Domain-Einstellungen beibehalten. Für die statische
    Branch-Veröffentlichung ist kein Build-Schritt und kein npm erforderlich.
 5. Nach dem Deployment neu laden. Die Asset-Links im Seitenquelltext müssen
-   zur Versionskontrolle ?v=20261009-2 enthalten.
-6. Anschließend die neue Version live prüfen: alle vier Lernstufen und drei
+   zur Versionskontrolle ?v=20261009-3 enthalten.
+6. Auf der ×11-Seite müssen Nachbarziffernfelder statt des zehnfachen Werts
+   erscheinen. Danach die neue Version live prüfen: alle vier Lernstufen und drei
    Sprachen, Desktop/Smartphone, Modus „Alles selbst“ und Navigation.
    Die bereits bestandenen lokalen Tests stehen in BERICHT.txt.
 
