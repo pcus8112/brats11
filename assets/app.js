@@ -136,39 +136,83 @@
     if (!form) return;
     const level = $("#killer-level");
     const problem = $("#problem");
-    const tenfold = $("#killer-tenfold");
     const final = $("#killer-final");
-    const tenfoldLabel = $("#killer-tenfold-label");
+    const pairs = $("#killer-pairs");
     const finalLabel = $("#killer-final-label");
     const result = $("#result");
-    let number;
+    let number, trace;
 
     function updateLabels() {
-      tenfoldLabel.textContent = S.t("killer.tenfold", { n: number });
       finalLabel.textContent = S.t("killer.finalLabel", { n: number });
+      pairs.querySelectorAll("[data-i18n]").forEach(element => { element.textContent = S.t(element.dataset.i18n); });
+      trace.digits.slice(1).forEach((digit, i) => {
+        $("#killer-pair-" + i).setAttribute("aria-label", S.t("killer.pairAria", { position: i + 1, a: trace.digits[i], b: digit }));
+      });
+    }
+
+    function renderPairs() {
+      pairs.replaceChildren();
+      pairs.style.setProperty("--km-columns", trace.raw.length);
+      trace.raw.forEach((_, index) => {
+        const cell = document.createElement("div"); cell.className = "field km-input-cell";
+        if (index === 0 || index === trace.raw.length - 1) {
+          const label = document.createElement("span"); label.className = "km-cell-label";
+          label.dataset.i18n = index === 0 ? "killer.first" : "killer.last";
+          const digit = document.createElement("span"); digit.className = "km-edge-digit";
+          digit.textContent = index === 0 ? trace.digits[0] : trace.digits[trace.digits.length - 1];
+          cell.append(label, digit);
+        } else {
+          const id = "killer-pair-" + (index - 1);
+          const label = document.createElement("label"); label.htmlFor = id;
+          label.textContent = `${trace.digits[index - 1]} + ${trace.digits[index]}`;
+          const input = document.createElement("input"); input.id = id; input.type = "text";
+          input.inputMode = "text"; input.autocomplete = "off"; input.maxLength = 80;
+          input.setAttribute("aria-describedby", "killer-pairs-help input-help " + id + "-feedback");
+          const feedback = document.createElement("p"); feedback.className = "feedback"; feedback.id = id + "-feedback";
+          cell.append(label, input, feedback);
+        }
+        pairs.append(cell);
+      });
     }
 
     function newTask(event) {
       const selected = Number(level.value);
-      const min = selected === 1 ? 10 : selected === 2 ? 100 : 1000;
-      const max = selected === 1 ? 99 : selected === 2 ? 999 : 9999;
+      const min = selected === 1 ? 10 : selected === 2 ? 100 : selected === 3 ? 1000 : 10000;
+      const max = selected === 1 ? 99 : selected === 2 ? 999 : selected === 3 ? 9999 : 999999;
       number = E.randomInt(min, max);
+      trace = E.killerTrace(number);
       problem.innerHTML = `${number} <span class="accent">× 11</span>`;
-      [tenfold, final].forEach(resetField);
+      renderPairs();
+      resetField(final);
       result.className = "result";
       result.innerHTML = "";
       updateLabels();
-      if (event) tenfold.focus();
+      if (event) $("#killer-pair-0").focus();
     }
 
     function checkAnswer() {
-      const checks = [
-        checkField(tenfold, integerValue(tenfold), number * 10),
-        checkField(final, integerValue(final), number * 11)
-      ];
+      const checks = trace.raw.slice(1, -1).map((expected, i) => {
+        const input = $("#killer-pair-" + i);
+        const good = checkField(input, integerValue(input), expected);
+        if (!good) $("#killer-pair-" + i + "-feedback").textContent = "→ " + expected;
+        return good;
+      });
+      checks.push(checkField(final, integerValue(final), number * 11));
       const success = checks.every(Boolean);
-      const worked = `${number} × 10 = ${number * 10}; ${number * 10} + ${number} = ${number * 11}.`;
-      showSimpleResult(result, success, S.t(success ? "common.allCorrect" : "common.reviewFields") + " " + worked);
+      showSimpleResult(result, success, S.t(success ? "common.allCorrect" : "common.reviewFields"));
+      result.append(S.killerDiagram(trace));
+      const details = document.createElement("details"); details.className = "km-carry-walk"; details.open = !success;
+      const summary = document.createElement("summary"); summary.textContent = S.t("killer.carryWalk"); details.append(summary);
+      const list = document.createElement("ol");
+      [...trace.columns].reverse().forEach(column => {
+        const item = document.createElement("li");
+        item.textContent = S.t("killer.carryStep", { position: column.index + 1, raw: column.raw, incoming: column.incoming, total: column.total, digit: column.digit, outgoing: column.outgoing });
+        list.append(item);
+      });
+      if (trace.leading) {
+        const item = document.createElement("li"); item.textContent = S.t("killer.leadingCarry", { value: trace.leading }); list.append(item);
+      }
+      details.append(list); result.append(details);
     }
     form.addEventListener("submit", event => { event.preventDefault(); checkAnswer(); });
     level.addEventListener("change", newTask);

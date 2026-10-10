@@ -297,7 +297,27 @@
     return { left, right, target, base, code: makeCode(target, 3), result: left * right };
   }
 
+  // Decimal neighbour sums for multiplication by eleven. Carry resolution is
+  // deliberately separate so the UI can teach both stages without giving away answers.
+  function killerTrace(value) {
+    if (!Number.isSafeInteger(value) || value < 0 || value > Math.floor(Number.MAX_SAFE_INTEGER / 11)) {
+      throw new RangeError("Killer Move requires a non-negative integer with a safe product.");
+    }
+    const digits = String(value).split("").map(Number);
+    const raw = [digits[0], ...digits.slice(1).map((digit, i) => digits[i] + digit), digits[digits.length - 1]];
+    const columns = Array(raw.length);
+    let carry = 0;
+    for (let i = raw.length - 1; i >= 0; i--) {
+      const total = raw[i] + carry;
+      columns[i] = { index: i, raw: raw[i], incoming: carry, total, digit: total % 10, outgoing: Math.floor(total / 10) };
+      carry = columns[i].outgoing;
+    }
+    const result = ((carry ? String(carry) : "") + columns.map(column => column.digit).join("")).replace(/^0+(?=\d)/, "");
+    return { value, digits, raw, columns, leading: carry, result };
+  }
+
   return {
+    killerTrace,
     parseRational,
     integerValue,
     evaluateExactRoute,
